@@ -31,7 +31,7 @@ now = datetime.datetime.now()
 ```python
 # Create a settings object with your API key and preferred units
 api_key = "4af76c79df8d11f6295bc8323877e2e5"
-#Setting the units to imperial to get Fahrenheit reading
+# Setting the units to imperial to get Fahrenheit reading
 settings = {"units": "imperial", "appid": api_key}
 ```
 
@@ -39,14 +39,13 @@ settings = {"units": "imperial", "appid": api_key}
 
 
 ```python
-
 # Latitude ranges from -90 to 90 and Longitude ranges from -180 to 180
 lat = list(np.arange(-90,90.01,0.01))
 long = list(np.arange(-180,180.01,0.01))
 
 # Setting Latitude and Longitude to ramdomly pick co-ordinates.
-lat_samples=random.sample(lat,2000)
-long_samples=random.sample(long,2000)
+lat_samples=random.sample(lat,2500)
+long_samples=random.sample(long,2500)
 
 # Creating a dataframe from the randomly sample Latitude and Longitude
 cities_DF=pd.DataFrame({"Latitude":lat_samples,"Longitude":long_samples})
@@ -67,8 +66,8 @@ cities_DF=cities_DF.drop(cities_DF.columns[[0, 1]], axis=1)
 # Deleting duplicate values from the list of cities and keeping only the first
 cities_DF=cities_DF.drop_duplicates(['City'], keep='first')
 
-# Randomly sampling a list of 700 cities 
-cities_DF=cities_DF.sample(n=700)
+# Randomly sampling a list of 800 cities 
+cities_DF=cities_DF.sample(n=800)
 
 # Resetting the index of the cities list
 cities_DF=cities_DF.reset_index(drop=True)
@@ -104,28 +103,28 @@ cities_DF.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>wageningen</td>
-      <td>sr</td>
+      <td>zeya</td>
+      <td>ru</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>westport</td>
-      <td>nz</td>
+      <td>vardo</td>
+      <td>no</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>puerto escondido</td>
-      <td>co</td>
+      <td>luangwa</td>
+      <td>zm</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>chalmette</td>
-      <td>us</td>
+      <td>nevyansk</td>
+      <td>ru</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>gurskoye</td>
-      <td>ru</td>
+      <td>thai binh</td>
+      <td>vn</td>
     </tr>
   </tbody>
 </table>
@@ -161,3019 +160,3403 @@ print("\n-----------------------------\nData Retrieval Complete\n---------------
     Beginning Data Retrieval
     -----------------------------
     
-    Processing record 1|wageningen,sr
+    Processing record 1|zeya,ru
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=wageningen,sr
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zeya,ru
     
-    Processing record 2|westport,nz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=westport,nz
-    
-    Processing record 3|puerto escondido,co
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=puerto+escondido,co
-    
-    Processing record 4|chalmette,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chalmette,us
-    
-    Processing record 5|gurskoye,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gurskoye,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 6|imbituba,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=imbituba,br
-    
-    Processing record 7|north bend,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=north+bend,us
-    
-    Processing record 8|sao filipe,cv
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sao+filipe,cv
-    
-    Processing record 9|derzhavinsk,kz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=derzhavinsk,kz
-    
-    Processing record 10|leua,ao
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=leua,ao
-    
-    Processing record 11|fevralsk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fevralsk,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 12|richards bay,za
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=richards+bay,za
-    
-    Processing record 13|tchamba,tg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tchamba,tg
-    
-    Processing record 14|grindavik,is
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=grindavik,is
-    
-    Processing record 15|vostok,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vostok,ru
-    
-    Processing record 16|puerto ayora,ec
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=puerto+ayora,ec
-    
-    Processing record 17|dolgoprudnyy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dolgoprudnyy,ru
-    
-    Processing record 18|mizan teferi,et
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mizan+teferi,et
-    
-    Processing record 19|sao joao da barra,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sao+joao+da+barra,br
-    
-    Processing record 20|guerrero negro,mx
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=guerrero+negro,mx
-    
-    Processing record 21|san roque,co
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+roque,co
-    
-    Processing record 22|sobolevo,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sobolevo,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 23|bowen,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bowen,au
-    
-    Processing record 24|kartaly,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kartaly,ru
-    
-    Processing record 25|raudeberg,no
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=raudeberg,no
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 26|ambilobe,mg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ambilobe,mg
-    
-    Processing record 27|am timan,td
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=am+timan,td
-    
-    Processing record 28|porohy,ua
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=porohy,ua
-    
-    Processing record 29|alexandria,eg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=alexandria,eg
-    
-    Processing record 30|asau,tv
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=asau,tv
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 31|forbes,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=forbes,au
-    
-    Processing record 32|temaraia,ki
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=temaraia,ki
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 33|ribeira grande,pt
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ribeira+grande,pt
-    
-    Processing record 34|kovdor,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kovdor,ru
-    
-    Processing record 35|placerville,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=placerville,us
-    
-    Processing record 36|bilma,ne
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bilma,ne
-    
-    Processing record 37|bambous virieux,mu
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bambous+virieux,mu
-    
-    Processing record 38|rungata,ki
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rungata,ki
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 39|qaanaaq,gl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=qaanaaq,gl
-    
-    Processing record 40|nara,ml
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nara,ml
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 41|vodnyy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vodnyy,ru
-    
-    Processing record 42|avarua,ck
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=avarua,ck
-    
-    Processing record 43|erenhot,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=erenhot,cn
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 44|high prairie,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=high+prairie,ca
-    
-    Processing record 45|kyzyl-suu,kg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kyzyl-suu,kg
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 46|beringovskiy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=beringovskiy,ru
-    
-    Processing record 47|tazovskiy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tazovskiy,ru
-    
-    Processing record 48|asyut,eg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=asyut,eg
-    
-    Processing record 49|arlit,ne
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=arlit,ne
-    
-    Processing record 50|ancud,cl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ancud,cl
-    
-    Processing record 51|aklavik,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=aklavik,ca
-    
-    Processing record 52|montepuez,mz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=montepuez,mz
-    
-    Processing record 53|misratah,ly
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=misratah,ly
-    
-    Processing record 54|galle,lk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=galle,lk
-    
-    Processing record 55|saldanha,za
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saldanha,za
-    
-    Processing record 56|ucluelet,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ucluelet,ca
-    
-    Processing record 57|garsten,at
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=garsten,at
-    
-    Processing record 58|chunhuhub,mx
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chunhuhub,mx
-    
-    Processing record 59|porto murtinho,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=porto+murtinho,br
-    
-    Processing record 60|artyk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=artyk,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 61|yarada,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yarada,in
-    
-    Processing record 62|marcona,pe
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=marcona,pe
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 63|boddam,gb
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=boddam,gb
-    
-    Processing record 64|lerwick,gb
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lerwick,gb
-    
-    Processing record 65|leningradskiy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=leningradskiy,ru
-    
-    Processing record 66|utete,tz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=utete,tz
-    
-    Processing record 67|adrar,dz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=adrar,dz
-    
-    Processing record 68|torbay,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=torbay,ca
-    
-    Processing record 69|tocopilla,cl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tocopilla,cl
-    
-    Processing record 70|banda aceh,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=banda+aceh,id
-    
-    Processing record 71|pangkalanbuun,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pangkalanbuun,id
-    
-    Processing record 72|berdigestyakh,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=berdigestyakh,ru
-    
-    Processing record 73|wuan,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=wuan,cn
-    
-    Processing record 74|svetlogorsk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=svetlogorsk,ru
-    
-    Processing record 75|pemangkat,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pemangkat,id
-    
-    Processing record 76|alotau,pg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=alotau,pg
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 77|genhe,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=genhe,cn
-    
-    Processing record 78|evensk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=evensk,ru
-    
-    Processing record 79|hasaki,jp
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hasaki,jp
-    
-    Processing record 80|churapcha,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=churapcha,ru
-    
-    Processing record 81|bubaque,gw
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bubaque,gw
-    
-    Processing record 82|bathsheba,bb
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bathsheba,bb
-    
-    Processing record 83|valparaiso,cl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=valparaiso,cl
-    
-    Processing record 84|goderich,sl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=goderich,sl
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 85|meulaboh,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=meulaboh,id
-    
-    Processing record 86|kiama,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kiama,au
-    
-    Processing record 87|hithadhoo,mv
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hithadhoo,mv
-    
-    Processing record 88|roma,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=roma,au
-    
-    Processing record 89|vao,nc
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vao,nc
-    
-    Processing record 90|tumannyy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tumannyy,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 91|yerbogachen,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yerbogachen,ru
-    
-    Processing record 92|dalvik,is
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dalvik,is
-    
-    Processing record 93|saleaula,ws
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saleaula,ws
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 94|ostrovnoy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ostrovnoy,ru
-    
-    Processing record 95|jabinyanah,tn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jabinyanah,tn
-    
-    Processing record 96|pisco,pe
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pisco,pe
-    
-    Processing record 97|carnarvon,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=carnarvon,au
-    
-    Processing record 98|katherine,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=katherine,au
-    
-    Processing record 99|toba,jp
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=toba,jp
-    
-    Processing record 100|vila franca do campo,pt
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vila+franca+do+campo,pt
-    
-    Processing record 101|tabukiniberu,ki
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tabukiniberu,ki
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 102|fort saint john,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fort+saint+john,ca
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 103|cayenne,gf
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cayenne,gf
-    
-    Processing record 104|yelahanka,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yelahanka,in
-    
-    Processing record 105|udachnyy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=udachnyy,ru
-    
-    Processing record 106|rantoul,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rantoul,us
-    
-    Processing record 107|tabulbah,tn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tabulbah,tn
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 108|husavik,is
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=husavik,is
-    
-    Processing record 109|lokosovo,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lokosovo,ru
-    
-    Processing record 110|le vauclin,mq
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=le+vauclin,mq
-    
-    Processing record 111|okha,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=okha,ru
-    
-    Processing record 112|boundiali,ci
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=boundiali,ci
-    
-    Processing record 113|cody,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cody,us
-    
-    Processing record 114|jamestown,sh
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jamestown,sh
-    
-    Processing record 115|kiunga,pg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kiunga,pg
-    
-    Processing record 116|tsihombe,mg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tsihombe,mg
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 117|oranjestad,aw
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=oranjestad,aw
-    
-    Processing record 118|brasileia,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=brasileia,br
-    
-    Processing record 119|tuktoyaktuk,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tuktoyaktuk,ca
-    
-    Processing record 120|byron bay,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=byron+bay,au
-    
-    Processing record 121|otaru,jp
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=otaru,jp
-    
-    Processing record 122|yerofey pavlovich,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yerofey+pavlovich,ru
-    
-    Processing record 123|qianan,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=qianan,cn
-    
-    Processing record 124|taree,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=taree,au
-    
-    Processing record 125|samusu,ws
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=samusu,ws
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 126|virginia beach,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=virginia+beach,us
-    
-    Processing record 127|nyzhni sirohozy,ua
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nyzhni+sirohozy,ua
-    
-    Processing record 128|constitucion,mx
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=constitucion,mx
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 129|dongsheng,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dongsheng,cn
-    
-    Processing record 130|puerto maldonado,pe
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=puerto+maldonado,pe
-    
-    Processing record 131|lagoa,pt
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lagoa,pt
-    
-    Processing record 132|sinnamary,gf
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sinnamary,gf
-    
-    Processing record 133|havoysund,no
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=havoysund,no
-    
-    Processing record 134|yichang,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yichang,cn
-    
-    Processing record 135|gizo,sb
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gizo,sb
-    
-    Processing record 136|chandler,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chandler,ca
-    
-    Processing record 137|bairiki,ki
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bairiki,ki
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 138|san antero,co
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+antero,co
-    
-    Processing record 139|fort nelson,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fort+nelson,ca
-    
-    Processing record 140|shahrud,ir
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=shahrud,ir
-    
-    Processing record 141|yar-sale,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yar-sale,ru
-    
-    Processing record 142|nata,bw
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nata,bw
-    
-    Processing record 143|salalah,om
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=salalah,om
-    
-    Processing record 144|kaduna,ng
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kaduna,ng
-    
-    Processing record 145|saskylakh,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saskylakh,ru
-    
-    Processing record 146|mana,gf
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mana,gf
-    
-    Processing record 147|nizhneyansk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nizhneyansk,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 148|palabuhanratu,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=palabuhanratu,id
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 149|duobao,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=duobao,cn
-    
-    Processing record 150|kirakira,sb
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kirakira,sb
-    
-    Processing record 151|hay river,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hay+river,ca
-    
-    Processing record 152|chara,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chara,ru
-    
-    Processing record 153|waipawa,nz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=waipawa,nz
-    
-    Processing record 154|san patricio,mx
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+patricio,mx
-    
-    Processing record 155|eenhana,na
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=eenhana,na
-    
-    Processing record 156|mantua,cu
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mantua,cu
-    
-    Processing record 157|marsh harbour,bs
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=marsh+harbour,bs
-    
-    Processing record 158|bontang,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bontang,id
-    
-    Processing record 159|besikduzu,tr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=besikduzu,tr
-    
-    Processing record 160|cheuskiny,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cheuskiny,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 161|chagda,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chagda,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 162|aripuana,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=aripuana,br
-    
-    Processing record 163|odweyne,so
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=odweyne,so
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 164|kapaa,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kapaa,us
-    
-    Processing record 165|ballina,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ballina,au
-    
-    Processing record 166|xam nua,la
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=xam+nua,la
-    
-    Processing record 167|darhan,mn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=darhan,mn
-    
-    Processing record 168|baruun-urt,mn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=baruun-urt,mn
-    
-    Processing record 169|gunnedah,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gunnedah,au
-    
-    Processing record 170|lebu,cl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lebu,cl
-    
-    Processing record 171|guasdualito,ve
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=guasdualito,ve
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 172|khanpur,pk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khanpur,pk
-    
-    Processing record 173|san carlos de bariloche,ar
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+carlos+de+bariloche,ar
-    
-    Processing record 174|kabelvag,no
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kabelvag,no
-    
-    Processing record 175|palmer,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=palmer,us
-    
-    Processing record 176|rome,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rome,us
-    
-    Processing record 177|karkaralinsk,kz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=karkaralinsk,kz
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 178|rawah,iq
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rawah,iq
-    
-    Processing record 179|solnechnyy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=solnechnyy,ru
-    
-    Processing record 180|jaggayyapeta,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jaggayyapeta,in
-    
-    Processing record 181|sisimiut,gl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sisimiut,gl
-    
-    Processing record 182|falkoping,se
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=falkoping,se
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 183|grand river south east,mu
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=grand+river+south+east,mu
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 184|hihifo,to
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hihifo,to
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 185|sibu,my
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sibu,my
-    
-    Processing record 186|kihei,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kihei,us
-    
-    Processing record 187|siilinjarvi,fi
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=siilinjarvi,fi
-    
-    Processing record 188|leh,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=leh,in
-    
-    Processing record 189|kaitangata,nz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kaitangata,nz
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 190|pacific grove,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pacific+grove,us
-    
-    Processing record 191|cidreira,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cidreira,br
-    
-    Processing record 192|aflu,dz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=aflu,dz
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 193|pinar del rio,cu
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pinar+del+rio,cu
-    
-    Processing record 194|koungou,yt
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=koungou,yt
-    
-    Processing record 195|massakory,td
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=massakory,td
-    
-    Processing record 196|kon tum,vn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kon+tum,vn
-    
-    Processing record 197|priargunsk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=priargunsk,ru
-    
-    Processing record 198|baykit,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=baykit,ru
-    
-    Processing record 199|metsovon,gr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=metsovon,gr
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 200|comodoro rivadavia,ar
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=comodoro+rivadavia,ar
-    
-    Processing record 201|lasa,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lasa,cn
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 202|atar,mr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=atar,mr
-    
-    Processing record 203|klimovsk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=klimovsk,ru
-    
-    Processing record 204|manaure,co
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=manaure,co
-    
-    Processing record 205|karratha,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=karratha,au
-    
-    Processing record 206|sibolga,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sibolga,id
-    
-    Processing record 207|ewa beach,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ewa+beach,us
-    
-    Processing record 208|zhigansk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zhigansk,ru
-    
-    Processing record 209|fortuna,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fortuna,us
-    
-    Processing record 210|illoqqortoormiut,gl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=illoqqortoormiut,gl
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 211|nikolskoye,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nikolskoye,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 212|mogadishu,so
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mogadishu,so
-    
-    Processing record 213|turbat,pk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=turbat,pk
-    
-    Processing record 214|buala,sb
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=buala,sb
-    
-    Processing record 215|bulgan,mn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bulgan,mn
-    
-    Processing record 216|sur,om
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sur,om
-    
-    Processing record 217|cherskiy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cherskiy,ru
-    
-    Processing record 218|los llanos de aridane,es
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=los+llanos+de+aridane,es
-    
-    Processing record 219|petropavlovsk-kamchatskiy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=petropavlovsk-kamchatskiy,ru
-    
-    Processing record 220|hambantota,lk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hambantota,lk
-    
-    Processing record 221|collie,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=collie,au
-    
-    Processing record 222|clyde river,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=clyde+river,ca
-    
-    Processing record 223|santa cruz,cr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=santa+cruz,cr
-    
-    Processing record 224|albany,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=albany,au
-    
-    Processing record 225|maltahohe,na
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maltahohe,na
-    
-    Processing record 226|poronaysk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=poronaysk,ru
-    
-    Processing record 227|nelson bay,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nelson+bay,au
-    
-    Processing record 228|karaul,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=karaul,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 229|laguna de perlas,ni
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=laguna+de+perlas,ni
-    
-    Processing record 230|luwuk,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=luwuk,id
-    
-    Processing record 231|prainha,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=prainha,br
-    
-    Processing record 232|kupang,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kupang,id
-    
-    Processing record 233|jalu,ly
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jalu,ly
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 234|hajiganj,bd
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hajiganj,bd
-    
-    Processing record 235|hervey bay,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hervey+bay,au
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 236|honiara,sb
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=honiara,sb
-    
-    Processing record 237|pangnirtung,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pangnirtung,ca
-    
-    Processing record 238|punta arenas,cl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=punta+arenas,cl
-    
-    Processing record 239|la crosse,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=la+crosse,us
-    
-    Processing record 240|glendora,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=glendora,us
-    
-    Processing record 241|bahsuma,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bahsuma,in
-    
-    Processing record 242|alta floresta,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=alta+floresta,br
-    
-    Processing record 243|peleduy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=peleduy,ru
-    
-    Processing record 244|mataura,pf
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mataura,pf
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 245|tuljapur,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tuljapur,in
-    
-    Processing record 246|alice springs,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=alice+springs,au
-    
-    Processing record 247|palpa,pe
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=palpa,pe
-    
-    Processing record 248|kita,ml
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kita,ml
-    
-    Processing record 249|chicama,pe
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chicama,pe
-    
-    Processing record 250|ust-kuyga,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ust-kuyga,ru
-    
-    Processing record 251|bethel,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bethel,us
-    
-    Processing record 252|amapa,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=amapa,br
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 253|kavieng,pg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kavieng,pg
-    
-    Processing record 254|puerto baquerizo moreno,ec
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=puerto+baquerizo+moreno,ec
-    
-    Processing record 255|dauphin,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dauphin,ca
-    
-    Processing record 256|xining,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=xining,cn
-    
-    Processing record 257|kilindoni,tz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kilindoni,tz
-    
-    Processing record 258|taltal,cl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=taltal,cl
-    
-    Processing record 259|koslan,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=koslan,ru
-    
-    Processing record 260|narsaq,gl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=narsaq,gl
-    
-    Processing record 261|dikson,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dikson,ru
-    
-    Processing record 262|sao sebastiao,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sao+sebastiao,br
-    
-    Processing record 263|taman,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=taman,id
-    
-    Processing record 264|zyryanka,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zyryanka,ru
-    
-    Processing record 265|faanui,pf
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=faanui,pf
-    
-    Processing record 266|fenyi,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fenyi,cn
-    
-    Processing record 267|pangody,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pangody,ru
-    
-    Processing record 268|walvis bay,na
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=walvis+bay,na
-    
-    Processing record 269|parati,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=parati,br
-    
-    Processing record 270|hualmay,pe
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hualmay,pe
-    
-    Processing record 271|camacha,pt
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=camacha,pt
-    
-    Processing record 272|taoudenni,ml
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=taoudenni,ml
-    
-    Processing record 273|navahrudak,by
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=navahrudak,by
-    
-    Processing record 274|amguri,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=amguri,in
-    
-    Processing record 275|sirjan,ir
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sirjan,ir
-    
-    Processing record 276|augustow,pl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=augustow,pl
-    
-    Processing record 277|stornoway,gb
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=stornoway,gb
-    
-    Processing record 278|chokwe,mz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chokwe,mz
-    
-    Processing record 279|mitchell,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mitchell,us
-    
-    Processing record 280|bordighera,it
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bordighera,it
-    
-    Processing record 281|tiarei,pf
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tiarei,pf
-    
-    Processing record 282|nauchnyy gorodok,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nauchnyy+gorodok,ru
-    
-    Processing record 283|chimbote,pe
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chimbote,pe
-    
-    Processing record 284|lardos,gr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lardos,gr
-    
-    Processing record 285|ust-ilimsk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ust-ilimsk,ru
-    
-    Processing record 286|san policarpo,ph
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+policarpo,ph
-    
-    Processing record 287|ukiah,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ukiah,us
-    
-    Processing record 288|anakapalle,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=anakapalle,in
-    
-    Processing record 289|orkhomenos,gr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=orkhomenos,gr
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 290|tiksi,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tiksi,ru
-    
-    Processing record 291|ambon,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ambon,id
-    
-    Processing record 292|vieste,it
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vieste,it
-    
-    Processing record 293|morondava,mg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=morondava,mg
-    
-    Processing record 294|codrington,ag
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=codrington,ag
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 295|sabla,bg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sabla,bg
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 296|assiniboia,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=assiniboia,ca
-    
-    Processing record 297|rindal,no
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rindal,no
-    
-    Processing record 298|maxixe,mz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maxixe,mz
-    
-    Processing record 299|prince rupert,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=prince+rupert,ca
-    
-    Processing record 300|coihaique,cl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=coihaique,cl
-    
-    Processing record 301|boyarka,ua
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=boyarka,ua
-    
-    Processing record 302|rikitea,pf
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rikitea,pf
-    
-    Processing record 303|rabo de peixe,pt
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rabo+de+peixe,pt
-    
-    Processing record 304|geraldton,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=geraldton,au
-    
-    Processing record 305|barwadih,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=barwadih,in
-    
-    Processing record 306|tabou,ci
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tabou,ci
-    
-    Processing record 307|thinadhoo,mv
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=thinadhoo,mv
-    
-    Processing record 308|berlevag,no
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=berlevag,no
-    
-    Processing record 309|lima,pe
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lima,pe
-    
-    Processing record 310|karaton,kz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=karaton,kz
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 311|san quintin,mx
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+quintin,mx
-    
-    Processing record 312|kikwit,cd
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kikwit,cd
-    
-    Processing record 313|maddur,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maddur,in
-    
-    Processing record 314|kailua,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kailua,us
-    
-    Processing record 315|kahului,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kahului,us
-    
-    Processing record 316|tasiilaq,gl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tasiilaq,gl
-    
-    Processing record 317|brae,gb
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=brae,gb
-    
-    Processing record 318|bonthe,sl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bonthe,sl
-    
-    Processing record 319|tongling,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tongling,cn
-    
-    Processing record 320|sinkat,sd
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sinkat,sd
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 321|airai,pw
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=airai,pw
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 322|lulea,se
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lulea,se
-    
-    Processing record 323|jiddah,sa
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jiddah,sa
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 324|varzob,tj
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=varzob,tj
-    
-    Processing record 325|batemans bay,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=batemans+bay,au
-    
-    Processing record 326|lincoln,ar
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lincoln,ar
-    
-    Processing record 327|vila,vu
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vila,vu
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 328|saint-philippe,re
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saint-philippe,re
-    
-    Processing record 329|santa ana,pe
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=santa+ana,pe
-    
-    Processing record 330|satitoa,ws
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=satitoa,ws
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 331|mariental,na
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mariental,na
-    
-    Processing record 332|surgut,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=surgut,ru
-    
-    Processing record 333|lompoc,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lompoc,us
-    
-    Processing record 334|vite,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vite,in
-    
-    Processing record 335|nalut,ly
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nalut,ly
-    
-    Processing record 336|tuatapere,nz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tuatapere,nz
-    
-    Processing record 337|chuy,uy
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chuy,uy
-    
-    Processing record 338|hofn,is
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hofn,is
-    
-    Processing record 339|kisaran,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kisaran,id
-    
-    Processing record 340|souillac,mu
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=souillac,mu
-    
-    Processing record 341|visnes,no
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=visnes,no
-    
-    Processing record 342|bredasdorp,za
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bredasdorp,za
-    
-    Processing record 343|wajima,jp
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=wajima,jp
-    
-    Processing record 344|gat,ly
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gat,ly
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 345|isangel,vu
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=isangel,vu
-    
-    Processing record 346|vanavara,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vanavara,ru
-    
-    Processing record 347|lake jackson,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lake+jackson,us
-    
-    Processing record 348|puerto colombia,co
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=puerto+colombia,co
-    
-    Processing record 349|netivot,il
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=netivot,il
-    
-    Processing record 350|norman wells,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=norman+wells,ca
-    
-    Processing record 351|sitka,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sitka,us
-    
-    Processing record 352|esperance,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=esperance,au
-    
-    Processing record 353|lekoni,ga
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lekoni,ga
-    
-    Processing record 354|santa maria,cv
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=santa+maria,cv
-    
-    Processing record 355|mega,et
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mega,et
-    
-    Processing record 356|sao gabriel da cachoeira,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sao+gabriel+da+cachoeira,br
-    
-    Processing record 357|pombal,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pombal,br
-    
-    Processing record 358|chingola,zm
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chingola,zm
-    
-    Processing record 359|la ronge,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=la+ronge,ca
-    
-    Processing record 360|mahebourg,mu
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mahebourg,mu
-    
-    Processing record 361|wanning,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=wanning,cn
-    
-    Processing record 362|naliya,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=naliya,in
-    
-    Processing record 363|lavrentiya,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lavrentiya,ru
-    
-    Processing record 364|gedo,et
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gedo,et
-    
-    Processing record 365|ponnani,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ponnani,in
-    
-    Processing record 366|barentsburg,sj
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=barentsburg,sj
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 367|harboore,dk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=harboore,dk
-    
-    Processing record 368|xuddur,so
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=xuddur,so
-    
-    Processing record 369|pitimbu,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pitimbu,br
-    
-    Processing record 370|bilibino,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bilibino,ru
-    
-    Processing record 371|longyearbyen,sj
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=longyearbyen,sj
-    
-    Processing record 372|te anau,nz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=te+anau,nz
-    
-    Processing record 373|belushya guba,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=belushya+guba,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 374|nuuk,gl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nuuk,gl
-    
-    Processing record 375|haines junction,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=haines+junction,ca
-    
-    Processing record 376|plettenberg bay,za
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=plettenberg+bay,za
-    
-    Processing record 377|khani,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khani,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 378|khuzhir,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khuzhir,ru
-    
-    Processing record 379|pho thong,th
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pho+thong,th
-    
-    Processing record 380|acarau,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=acarau,br
-    
-    Processing record 381|nueva imperial,cl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nueva+imperial,cl
-    
-    Processing record 382|sabya,sa
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sabya,sa
-    
-    Processing record 383|igrim,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=igrim,ru
-    
-    Processing record 384|mandalgovi,mn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mandalgovi,mn
-    
-    Processing record 385|poltavka,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=poltavka,ru
-    
-    Processing record 386|kaka,tm
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kaka,tm
-    
-    Processing record 387|bengkulu,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bengkulu,id
-    
-    Processing record 388|kamenskoye,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kamenskoye,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 389|marzuq,ly
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=marzuq,ly
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 390|lithgow,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lithgow,au
-    
-    Processing record 391|champerico,gt
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=champerico,gt
-    
-    Processing record 392|nisia floresta,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nisia+floresta,br
-    
-    Processing record 393|atuona,pf
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=atuona,pf
-    
-    Processing record 394|inuvik,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=inuvik,ca
-    
-    Processing record 395|thompson,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=thompson,ca
-    
-    Processing record 396|oussouye,sn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=oussouye,sn
-    
-    Processing record 397|san martin,co
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+martin,co
-    
-    Processing record 398|haibowan,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=haibowan,cn
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 399|lakatoro,vu
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lakatoro,vu
-    
-    Processing record 400|tilichiki,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tilichiki,ru
-    
-    Processing record 401|monrovia,lr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=monrovia,lr
-    
-    Processing record 402|emmett,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=emmett,us
-    
-    Processing record 403|ilulissat,gl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ilulissat,gl
-    
-    Processing record 404|katsiveli,ua
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=katsiveli,ua
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 405|coquimbo,cl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=coquimbo,cl
-    
-    Processing record 406|gazanjyk,tm
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gazanjyk,tm
-    
-    Processing record 407|galesong,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=galesong,id
-    
-    Processing record 408|gilbues,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gilbues,br
-    
-    Processing record 409|dzilam gonzalez,mx
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dzilam+gonzalez,mx
-    
-    Processing record 410|calama,cl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=calama,cl
-    
-    Processing record 411|ixtapa,mx
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ixtapa,mx
-    
-    Processing record 412|manzhouli,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=manzhouli,cn
-    
-    Processing record 413|balezino,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=balezino,ru
-    
-    Processing record 414|cubuk,tr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cubuk,tr
-    
-    Processing record 415|liverpool,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=liverpool,ca
-    
-    Processing record 416|arani,bo
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=arani,bo
-    
-    Processing record 417|lolua,tv
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lolua,tv
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 418|butaritari,ki
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=butaritari,ki
-    
-    Processing record 419|mys shmidta,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mys+shmidta,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 420|bonfim,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bonfim,br
-    
-    Processing record 421|bizhbulyak,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bizhbulyak,ru
-    
-    Processing record 422|east london,za
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=east+london,za
-    
-    Processing record 423|tank,pk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tank,pk
-    
-    Processing record 424|mackay,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mackay,au
-    
-    Processing record 425|qinggang,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=qinggang,cn
-    
-    Processing record 426|otradinskiy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=otradinskiy,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 427|the valley,ai
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=the+valley,ai
-    
-    Processing record 428|elko,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=elko,us
-    
-    Processing record 429|florianopolis,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=florianopolis,br
-    
-    Processing record 430|svetlyy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=svetlyy,ru
-    
-    Processing record 431|cuamba,mz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cuamba,mz
-    
-    Processing record 432|college,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=college,us
-    
-    Processing record 433|molteno,za
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=molteno,za
-    
-    Processing record 434|alofi,nu
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=alofi,nu
-    
-    Processing record 435|kalevala,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kalevala,ru
-    
-    Processing record 436|jacareacanga,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jacareacanga,br
-    
-    Processing record 437|kenai,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kenai,us
-    
-    Processing record 438|kabanjahe,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kabanjahe,id
-    
-    Processing record 439|tahta,eg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tahta,eg
-    
-    Processing record 440|taolanaro,mg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=taolanaro,mg
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 441|katangli,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=katangli,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 442|kremnica,sk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kremnica,sk
-    
-    Processing record 443|zonguldak,tr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zonguldak,tr
-    
-    Processing record 444|viligili,mv
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=viligili,mv
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 445|port hedland,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+hedland,au
-    
-    Processing record 446|bela,pk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bela,pk
-    
-    Processing record 447|calabar,ng
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=calabar,ng
-    
-    Processing record 448|touros,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=touros,br
-    
-    Processing record 449|ginda,er
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ginda,er
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 450|tessalit,ml
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tessalit,ml
-    
-    Processing record 451|pevek,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pevek,ru
-    
-    Processing record 452|saint george,bm
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saint+george,bm
-    
-    Processing record 453|wewak,pg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=wewak,pg
-    
-    Processing record 454|dalbandin,pk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dalbandin,pk
-    
-    Processing record 455|akyab,mm
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=akyab,mm
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 456|port blair,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+blair,in
-    
-    Processing record 457|dillon,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dillon,us
-    
-    Processing record 458|kamaishi,jp
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kamaishi,jp
-    
-    Processing record 459|fukue,jp
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fukue,jp
-    
-    Processing record 460|arraial do cabo,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=arraial+do+cabo,br
-    
-    Processing record 461|mandera,ke
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mandera,ke
-    
-    Processing record 462|egvekinot,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=egvekinot,ru
-    
-    Processing record 463|ponta do sol,cv
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ponta+do+sol,cv
-    
-    Processing record 464|upernavik,gl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=upernavik,gl
-    
-    Processing record 465|koumac,nc
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=koumac,nc
-    
-    Processing record 466|ruidoso,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ruidoso,us
-    
-    Processing record 467|pathein,mm
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pathein,mm
-    
-    Processing record 468|satuk,th
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=satuk,th
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 469|iqaluit,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=iqaluit,ca
-    
-    Processing record 470|meyungs,pw
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=meyungs,pw
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 471|busselton,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=busselton,au
-    
-    Processing record 472|tafresh,ir
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tafresh,ir
-    
-    Processing record 473|puerto del rosario,es
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=puerto+del+rosario,es
-    
-    Processing record 474|aboisso,ci
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=aboisso,ci
-    
-    Processing record 475|noumea,nc
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=noumea,nc
-    
-    Processing record 476|ayagoz,kz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ayagoz,kz
-    
-    Processing record 477|lashio,mm
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lashio,mm
-    
-    Processing record 478|samalaeulu,ws
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=samalaeulu,ws
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 479|saurimo,ao
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saurimo,ao
-    
-    Processing record 480|burica,pa
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=burica,pa
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 481|jinji,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jinji,cn
-    
-    Processing record 482|nouadhibou,mr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nouadhibou,mr
-    
-    Processing record 483|cape town,za
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cape+town,za
-    
-    Processing record 484|busayra,jo
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=busayra,jo
-    
-    Processing record 485|koutsouras,gr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=koutsouras,gr
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 486|saint-pierre,pm
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saint-pierre,pm
-    
-    Processing record 487|mondlo,za
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mondlo,za
-    
-    Processing record 488|cockburn town,tc
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cockburn+town,tc
-    
-    Processing record 489|deh rawud,af
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=deh+rawud,af
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 490|ushuaia,ar
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ushuaia,ar
-    
-    Processing record 491|oktyabrskoye,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=oktyabrskoye,ru
-    
-    Processing record 492|tsiroanomandidy,mg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tsiroanomandidy,mg
-    
-    Processing record 493|save,bj
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=save,bj
-    
-    Processing record 494|yulara,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yulara,au
-    
-    Processing record 495|sentyabrskiy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sentyabrskiy,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 496|lar gerd,af
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lar+gerd,af
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 497|presidencia roque saenz pena,ar
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=presidencia+roque+saenz+pena,ar
-    
-    Processing record 498|cabo san lucas,mx
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cabo+san+lucas,mx
-    
-    Processing record 499|necochea,ar
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=necochea,ar
-    
-    Processing record 500|mar del plata,ar
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mar+del+plata,ar
-    
-    Processing record 501|zhitikara,kz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zhitikara,kz
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 502|shaoyang,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=shaoyang,cn
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 503|talnakh,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=talnakh,ru
-    
-    Processing record 504|havre-saint-pierre,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=havre-saint-pierre,ca
-    
-    Processing record 505|dharchula,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dharchula,in
-    
-    Processing record 506|yuzhnyy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yuzhnyy,ru
-    
-    Processing record 507|san cristobal,ec
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+cristobal,ec
-    
-    Processing record 508|hobart,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hobart,au
-    
-    Processing record 509|valledupar,co
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=valledupar,co
-    
-    Processing record 510|montrose,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=montrose,us
-    
-    Processing record 511|hilo,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hilo,us
-    
-    Processing record 512|ankazobe,mg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ankazobe,mg
-    
-    Processing record 513|kalmunai,lk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kalmunai,lk
-    
-    Processing record 514|malartic,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=malartic,ca
-    
-    Processing record 515|new norfolk,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=new+norfolk,au
-    
-    Processing record 516|pihuamo,mx
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pihuamo,mx
-    
-    Processing record 517|srednekolymsk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=srednekolymsk,ru
-    
-    Processing record 518|mentok,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mentok,id
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 519|barrow,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=barrow,us
-    
-    Processing record 520|warri,ng
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=warri,ng
-    
-    Processing record 521|ulladulla,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ulladulla,au
-    
-    Processing record 522|beyneu,kz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=beyneu,kz
-    
-    Processing record 523|formoso do araguaia,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=formoso+do+araguaia,br
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 524|masaba,ph
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=masaba,ph
-    
-    Processing record 525|vaini,to
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vaini,to
-    
-    Processing record 526|enumclaw,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=enumclaw,us
-    
-    Processing record 527|dwarka,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dwarka,in
-    
-    Processing record 528|kadykchan,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kadykchan,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 529|abbeville,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=abbeville,us
-    
-    Processing record 530|yellowknife,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yellowknife,ca
-    
-    Processing record 531|anadyr,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=anadyr,ru
-    
-    Processing record 532|erbaa,tr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=erbaa,tr
-    
-    Processing record 533|la rioja,ar
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=la+rioja,ar
-    
-    Processing record 534|baghdad,iq
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=baghdad,iq
-    
-    Processing record 535|alyangula,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=alyangula,au
-    
-    Processing record 536|amderma,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=amderma,ru
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 537|khatanga,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khatanga,ru
-    
-    Processing record 538|axim,gh
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=axim,gh
-    
-    Processing record 539|sept-iles,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sept-iles,ca
-    
-    Processing record 540|erzin,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=erzin,ru
-    
-    Processing record 541|umzimvubu,za
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=umzimvubu,za
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 542|challapata,bo
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=challapata,bo
-    
-    Processing record 543|fafe,pt
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fafe,pt
-    
-    Processing record 544|eyrarbakki,is
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=eyrarbakki,is
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 545|samarai,pg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=samarai,pg
-    
-    Processing record 546|warrnambool,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=warrnambool,au
-    
-    Processing record 547|kalmar,se
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kalmar,se
-    
-    Processing record 548|rauma,fi
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rauma,fi
-    
-    Processing record 549|hammerfest,no
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hammerfest,no
-    
-    Processing record 550|costa rica,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=costa+rica,br
-    
-    Processing record 551|rock sound,bs
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rock+sound,bs
-    
-    Processing record 552|bermeo,es
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bermeo,es
-    
-    Processing record 553|san juan,ar
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+juan,ar
-    
-    Processing record 554|nantucket,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nantucket,us
-    
-    Processing record 555|provideniya,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=provideniya,ru
-    
-    Processing record 556|umarkot,pk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=umarkot,pk
-    
-    Processing record 557|portland,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=portland,au
-    
-    Processing record 558|truth or consequences,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=truth+or+consequences,us
-    
-    Processing record 559|ossora,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ossora,ru
-    
-    Processing record 560|tautira,pf
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tautira,pf
-    
-    Processing record 561|port arthur,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+arthur,us
-    
-    Processing record 562|oktyabrskiy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=oktyabrskiy,ru
-    
-    Processing record 563|matagami,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=matagami,ca
-    
-    Processing record 564|vaitupu,wf
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vaitupu,wf
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 565|labrea,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=labrea,br
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 566|ignatovka,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ignatovka,ru
-    
-    Processing record 567|tuggurt,dz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tuggurt,dz
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 568|latung,ph
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=latung,ph
-    
-    Processing record 569|chazuta,pe
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chazuta,pe
-    
-    Processing record 570|suzu,jp
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=suzu,jp
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 571|port hardy,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+hardy,ca
-    
-    Processing record 572|marawi,sd
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=marawi,sd
-    
-    Processing record 573|khandyga,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khandyga,ru
-    
-    Processing record 574|mareeba,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mareeba,au
-    
-    Processing record 575|luderitz,na
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=luderitz,na
-    
-    Processing record 576|mahanoro,mg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mahanoro,mg
-    
-    Processing record 577|tolaga bay,nz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tolaga+bay,nz
-    
-    Processing record 578|pathalgaon,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pathalgaon,in
-    
-    Processing record 579|lamar,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lamar,us
-    
-    Processing record 580|achacachi,bo
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=achacachi,bo
-    
-    Processing record 581|makakilo city,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=makakilo+city,us
-    
-    Processing record 582|kruisfontein,za
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kruisfontein,za
-    
-    Processing record 583|faya,td
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=faya,td
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 584|bluff,nz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bluff,nz
-    
-    Processing record 585|ellensburg,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ellensburg,us
-    
-    Processing record 586|catamarca,ar
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=catamarca,ar
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 587|bushehr,ir
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bushehr,ir
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 588|port elizabeth,za
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+elizabeth,za
-    
-    Processing record 589|severo-kurilsk,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=severo-kurilsk,ru
-    
-    Processing record 590|bundaberg,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bundaberg,au
-    
-    Processing record 591|capaci,it
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=capaci,it
-    
-    Processing record 592|hamilton,bm
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hamilton,bm
-    
-    Processing record 593|peravurani,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=peravurani,in
-    
-    Processing record 594|namibe,ao
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=namibe,ao
-    
-    Processing record 595|labuhan,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=labuhan,id
-    
-    Processing record 596|maku,ir
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maku,ir
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 597|kysyl-syr,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kysyl-syr,ru
-    
-    Processing record 598|sunbury,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sunbury,au
-    
-    Processing record 599|klaksvik,fo
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=klaksvik,fo
-    
-    Processing record 600|qandala,so
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=qandala,so
-    
-    Processing record 601|victoria,sc
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=victoria,sc
-    
-    Processing record 602|zhuhai,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zhuhai,cn
-    
-    Processing record 603|yumen,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yumen,cn
-    
-    Processing record 604|dutlwe,bw
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dutlwe,bw
-    
-    Processing record 605|mayumba,ga
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mayumba,ga
-    
-    Processing record 606|la sierra,co
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=la+sierra,co
-    
-    Processing record 607|ferkessedougou,ci
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ferkessedougou,ci
-    
-    Processing record 608|sabang,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sabang,id
-    
-    Processing record 609|uarini,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=uarini,br
-    
-    Processing record 610|mangrol,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mangrol,in
-    
-    Processing record 611|togur,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=togur,ru
-    
-    Processing record 612|robertsport,lr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=robertsport,lr
-    
-    Processing record 613|ilkal,in
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ilkal,in
-    
-    Processing record 614|kalangala,ug
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kalangala,ug
-    
-    Processing record 615|uyemskiy,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=uyemskiy,ru
-    
-    Processing record 616|lachi,pk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lachi,pk
-    
-    Processing record 617|hami,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hami,cn
-    
-    Processing record 618|mullaitivu,lk
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mullaitivu,lk
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 619|ponta delgada,pt
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ponta+delgada,pt
-    
-    Processing record 620|gurgan,az
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gurgan,az
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 621|tahe,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tahe,cn
-    
-    Processing record 622|vero beach,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vero+beach,us
-    
-    Processing record 623|chokurdakh,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chokurdakh,ru
-    
-    Processing record 624|cumaribo,co
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cumaribo,co
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 625|willmar,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=willmar,us
-    
-    Processing record 626|marienburg,sr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=marienburg,sr
-    
-    Processing record 627|ondorhaan,mn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ondorhaan,mn
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 628|inderborskiy,kz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=inderborskiy,kz
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 629|wulanhaote,cn
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=wulanhaote,cn
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 630|agirish,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=agirish,ru
-    
-    Processing record 631|torres,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=torres,br
-    
-    Processing record 632|manaus,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=manaus,br
-    
-    Processing record 633|devils lake,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=devils+lake,us
-    
-    Processing record 634|maykain,kz
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maykain,kz
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 635|bandarbeyla,so
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bandarbeyla,so
-    
-    Processing record 636|cortez,us
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cortez,us
-    
-    Processing record 637|gouyave,gd
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gouyave,gd
-    
-    Processing record 638|kenitra,ma
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kenitra,ma
-    
-    Processing record 639|balikpapan,id
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=balikpapan,id
-    
-    Processing record 640|cap malheureux,mu
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cap+malheureux,mu
-    
-    Processing record 641|salihli,tr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=salihli,tr
-    
-    Processing record 642|tripoli,ly
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tripoli,ly
-    
-    Processing record 643|caravelas,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=caravelas,br
-    
-    Processing record 644|attawapiskat,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=attawapiskat,ca
-    
-    [1;31mCity not found. Skipping...[1;30m
-    
-    Processing record 645|ortakoy,tr
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ortakoy,tr
-    
-    Processing record 646|castro,cl
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=castro,cl
-    
-    Processing record 647|mishelevka,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mishelevka,ru
-    
-    Processing record 648|ayan,ru
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ayan,ru
-    
-    Processing record 649|port lincoln,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+lincoln,au
-    
-    Processing record 650|lafia,ng
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lafia,ng
-    
-    Processing record 651|champasak,la
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=champasak,la
-    
-    Processing record 652|dunnville,ca
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dunnville,ca
-    
-    Processing record 653|maues,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maues,br
-    
-    Processing record 654|la paz,mx
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=la+paz,mx
-    
-    Processing record 655|vila velha,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vila+velha,br
-    
-    Processing record 656|bom jardim,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bom+jardim,br
-    
-    Processing record 657|finspang,se
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=finspang,se
-    
-    Processing record 658|vardo,no
+    Processing record 2|vardo,no
     
     https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vardo,no
     
-    Processing record 659|portsmouth,us
+    Processing record 3|luangwa,zm
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=portsmouth,us
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=luangwa,zm
     
-    Processing record 660|mahon,es
+    Processing record 4|nevyansk,ru
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mahon,es
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nevyansk,ru
     
-    [1;31mCity not found. Skipping...[1;30m
+    Processing record 5|thai binh,vn
     
-    Processing record 661|mehamn,no
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=thai+binh,vn
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mehamn,no
+    Processing record 6|constitucion,cl
     
-    Processing record 662|balyaga,ru
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=constitucion,cl
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=balyaga,ru
+    Processing record 7|wanning,cn
     
-    Processing record 663|phan rang,vn
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=wanning,cn
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=phan+rang,vn
+    Processing record 8|zhanaozen,kz
     
-    [1;31mCity not found. Skipping...[1;30m
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zhanaozen,kz
     
-    Processing record 664|sakaraha,mg
+    Processing record 9|taksimo,ru
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sakaraha,mg
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=taksimo,ru
     
-    Processing record 665|port alfred,za
+    Processing record 10|damghan,ir
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+alfred,za
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=damghan,ir
     
-    Processing record 666|golega,pt
+    Processing record 11|gornopravdinsk,ru
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=golega,pt
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gornopravdinsk,ru
     
-    Processing record 667|ilhabela,br
+    Processing record 12|la libertad,sv
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ilhabela,br
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=la+libertad,sv
     
-    Processing record 668|beloha,mg
+    Processing record 13|orotukan,ru
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=beloha,mg
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=orotukan,ru
     
-    Processing record 669|chuguyevka,ru
+    Processing record 14|cockburn town,bs
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chuguyevka,ru
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cockburn+town,bs
     
-    Processing record 670|knyaze-volkonskoye,ru
+    Processing record 15|verkhnyaya toyma,ru
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=knyaze-volkonskoye,ru
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=verkhnyaya+toyma,ru
     
-    Processing record 671|darnah,ly
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=darnah,ly
-    
-    Processing record 672|laguna,br
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=laguna,br
-    
-    Processing record 673|praxedis guerrero,mx
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=praxedis+guerrero,mx
-    
-    Processing record 674|kieta,pg
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kieta,pg
-    
-    Processing record 675|harer,et
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=harer,et
-    
-    Processing record 676|sorland,no
+    Processing record 16|sorland,no
     
     https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sorland,no
     
-    Processing record 677|zlatoustovsk,ru
+    Processing record 17|bamenda,cm
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zlatoustovsk,ru
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bamenda,cm
     
-    [1;31mCity not found. Skipping...[1;30m
+    Processing record 18|ayni,tj
     
-    Processing record 678|buraydah,sa
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ayni,tj
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=buraydah,sa
+    Processing record 19|carnarvon,au
     
-    Processing record 679|lata,sb
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=carnarvon,au
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lata,sb
+    Processing record 20|ganzhou,cn
     
-    [1;31mCity not found. Skipping...[1;30m
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ganzhou,cn
     
-    Processing record 680|katsuura,jp
+    Processing record 21|ourossogui,sn
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=katsuura,jp
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ourossogui,sn
     
-    Processing record 681|kanbe,mm
+    Processing record 22|bluff,nz
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kanbe,mm
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bluff,nz
     
-    Processing record 682|muisne,ec
+    Processing record 23|bubaque,gw
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=muisne,ec
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bubaque,gw
     
-    Processing record 683|portree,gb
+    Processing record 24|haines junction,ca
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=portree,gb
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=haines+junction,ca
     
-    Processing record 684|arinos,br
+    Processing record 25|gharo,pk
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=arinos,br
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gharo,pk
     
-    Processing record 685|fairbanks,us
+    Processing record 26|new castle,us
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fairbanks,us
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=new+castle,us
     
-    Processing record 686|flinders,au
-    
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=flinders,au
-    
-    Processing record 687|nguiu,au
+    Processing record 27|nguiu,au
     
     https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nguiu,au
     
     [1;31mCity not found. Skipping...[1;30m
     
-    Processing record 688|magistralnyy,ru
+    Processing record 28|shingu,jp
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=magistralnyy,ru
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=shingu,jp
     
-    Processing record 689|eureka,us
+    Processing record 29|libenge,cd
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=eureka,us
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=libenge,cd
     
-    Processing record 690|coyoles,hn
+    Processing record 30|jardim de piranhas,br
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=coyoles,hn
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jardim+de+piranhas,br
+    
+    Processing record 31|maues,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maues,br
+    
+    Processing record 32|wahpeton,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=wahpeton,us
+    
+    Processing record 33|isangel,vu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=isangel,vu
+    
+    Processing record 34|kahama,tz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kahama,tz
+    
+    Processing record 35|nador,ma
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nador,ma
+    
+    Processing record 36|xining,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=xining,cn
+    
+    Processing record 37|jamestown,sh
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jamestown,sh
+    
+    Processing record 38|nanortalik,gl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nanortalik,gl
+    
+    Processing record 39|abashiri,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=abashiri,jp
+    
+    Processing record 40|puerto narino,co
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=puerto+narino,co
+    
+    Processing record 41|goba,et
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=goba,et
+    
+    Processing record 42|allapalli,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=allapalli,in
+    
+    Processing record 43|novoagansk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=novoagansk,ru
+    
+    Processing record 44|zinder,ne
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zinder,ne
+    
+    Processing record 45|dunedin,nz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dunedin,nz
+    
+    Processing record 46|koila,gr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=koila,gr
+    
+    Processing record 47|sangolqui,ec
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sangolqui,ec
+    
+    Processing record 48|charters towers,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=charters+towers,au
+    
+    Processing record 49|emba,kz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=emba,kz
     
     [1;31mCity not found. Skipping...[1;30m
     
-    Processing record 691|lorengau,pg
+    Processing record 50|tuy hoa,vn
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lorengau,pg
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tuy+hoa,vn
     
-    Processing record 692|half moon bay,us
+    Processing record 51|camacha,pt
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=half+moon+bay,us
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=camacha,pt
     
-    Processing record 693|pagudpud,ph
+    Processing record 52|voyvozh,ru
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pagudpud,ph
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=voyvozh,ru
     
-    Processing record 694|kodiak,us
+    Processing record 53|batamshinskiy,kz
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kodiak,us
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=batamshinskiy,kz
     
-    Processing record 695|camopi,gf
+    Processing record 54|albanel,ca
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=camopi,gf
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=albanel,ca
     
-    Processing record 696|makrana,in
+    Processing record 55|piacabucu,br
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=makrana,in
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=piacabucu,br
     
-    Processing record 697|bandarban,bd
+    Processing record 56|abu samrah,qa
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bandarban,bd
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=abu+samrah,qa
     
-    Processing record 698|san pedro,ar
+    [1;31mCity not found. Skipping...[1;30m
     
-    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+pedro,ar
+    Processing record 57|sibolga,id
     
-    Processing record 699|hermanus,za
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sibolga,id
+    
+    Processing record 58|monterey,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=monterey,us
+    
+    Processing record 59|gberia fotombu,sl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gberia+fotombu,sl
+    
+    Processing record 60|butaritari,ki
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=butaritari,ki
+    
+    Processing record 61|kapoeta,sd
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kapoeta,sd
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 62|saleaula,ws
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saleaula,ws
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 63|kloulklubed,pw
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kloulklubed,pw
+    
+    Processing record 64|atuona,pf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=atuona,pf
+    
+    Processing record 65|cap malheureux,mu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cap+malheureux,mu
+    
+    Processing record 66|saint-pierre,pm
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saint-pierre,pm
+    
+    Processing record 67|centralia,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=centralia,us
+    
+    Processing record 68|hermanus,za
     
     https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hermanus,za
     
-    Processing record 700|mount gambier,au
+    Processing record 69|nalut,ly
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nalut,ly
+    
+    Processing record 70|rawannawi,ki
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rawannawi,ki
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 71|grants pass,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=grants+pass,us
+    
+    Processing record 72|klaksvik,fo
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=klaksvik,fo
+    
+    Processing record 73|qarqin,af
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=qarqin,af
+    
+    Processing record 74|tungkang,tw
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tungkang,tw
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 75|eyl,so
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=eyl,so
+    
+    Processing record 76|east london,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=east+london,za
+    
+    Processing record 77|shestakovo,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=shestakovo,ru
+    
+    Processing record 78|louis trichardt,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=louis+trichardt,za
+    
+    Processing record 79|langsa,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=langsa,id
+    
+    Processing record 80|whitianga,nz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=whitianga,nz
+    
+    Processing record 81|elsterwerda,de
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=elsterwerda,de
+    
+    Processing record 82|hailar,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hailar,cn
+    
+    Processing record 83|narsaq,gl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=narsaq,gl
+    
+    Processing record 84|fernie,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fernie,ca
+    
+    Processing record 85|tokur,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tokur,ru
+    
+    Processing record 86|skagastrond,is
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=skagastrond,is
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 87|nome,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nome,us
+    
+    Processing record 88|muisne,ec
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=muisne,ec
+    
+    Processing record 89|burns lake,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=burns+lake,ca
+    
+    Processing record 90|guia de isora,es
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=guia+de+isora,es
+    
+    Processing record 91|grenada,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=grenada,us
+    
+    Processing record 92|remanso,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=remanso,br
+    
+    Processing record 93|toliary,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=toliary,mg
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 94|biak,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=biak,id
+    
+    Processing record 95|san quintin,mx
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+quintin,mx
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 96|pozo colorado,py
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pozo+colorado,py
+    
+    Processing record 97|pisco,pe
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pisco,pe
+    
+    Processing record 98|caravelas,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=caravelas,br
+    
+    Processing record 99|adrar,dz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=adrar,dz
+    
+    Processing record 100|hilo,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hilo,us
+    
+    Processing record 101|port alfred,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+alfred,za
+    
+    Processing record 102|egvekinot,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=egvekinot,ru
+    
+    Processing record 103|magnitogorsk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=magnitogorsk,ru
+    
+    Processing record 104|uyuni,bo
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=uyuni,bo
+    
+    Processing record 105|samandag,tr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=samandag,tr
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 106|beringovskiy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=beringovskiy,ru
+    
+    Processing record 107|lavrentiya,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lavrentiya,ru
+    
+    Processing record 108|sao filipe,cv
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sao+filipe,cv
+    
+    Processing record 109|samarai,pg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=samarai,pg
+    
+    Processing record 110|anshun,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=anshun,cn
+    
+    Processing record 111|kobojango,bw
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kobojango,bw
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 112|nemuro,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nemuro,jp
+    
+    Processing record 113|letterkenny,ie
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=letterkenny,ie
+    
+    Processing record 114|hangu,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hangu,cn
+    
+    Processing record 115|navalmoral de la mata,es
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=navalmoral+de+la+mata,es
+    
+    Processing record 116|mackenzie,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mackenzie,ca
+    
+    Processing record 117|longyearbyen,sj
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=longyearbyen,sj
+    
+    Processing record 118|san vicente,ph
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+vicente,ph
+    
+    Processing record 119|grand-santi,gf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=grand-santi,gf
+    
+    Processing record 120|ilhabela,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ilhabela,br
+    
+    Processing record 121|pelym,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pelym,ru
+    
+    Processing record 122|meulaboh,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=meulaboh,id
+    
+    Processing record 123|vaini,to
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vaini,to
+    
+    Processing record 124|kilifi,ke
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kilifi,ke
+    
+    Processing record 125|lima,pe
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lima,pe
+    
+    Processing record 126|kempele,fi
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kempele,fi
+    
+    Processing record 127|katsuura,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=katsuura,jp
+    
+    Processing record 128|birin,dz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=birin,dz
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 129|warri,ng
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=warri,ng
+    
+    Processing record 130|halalo,wf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=halalo,wf
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 131|homer,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=homer,us
+    
+    Processing record 132|mount gambier,au
     
     https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mount+gambier,au
+    
+    Processing record 133|verkhoyansk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=verkhoyansk,ru
+    
+    Processing record 134|slantsy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=slantsy,ru
+    
+    Processing record 135|pevek,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pevek,ru
+    
+    Processing record 136|benemerito de las americas,mx
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=benemerito+de+las+americas,mx
+    
+    Processing record 137|mar del plata,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mar+del+plata,ar
+    
+    Processing record 138|la plata,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=la+plata,ar
+    
+    Processing record 139|acurenam,gq
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=acurenam,gq
+    
+    Processing record 140|yulara,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yulara,au
+    
+    Processing record 141|trebic,cz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=trebic,cz
+    
+    Processing record 142|kaitangata,nz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kaitangata,nz
+    
+    Processing record 143|salalah,om
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=salalah,om
+    
+    Processing record 144|tautira,pf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tautira,pf
+    
+    Processing record 145|tiarei,pf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tiarei,pf
+    
+    Processing record 146|mombetsu,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mombetsu,jp
+    
+    Processing record 147|ancud,cl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ancud,cl
+    
+    Processing record 148|paamiut,gl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=paamiut,gl
+    
+    Processing record 149|qasigiannguit,gl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=qasigiannguit,gl
+    
+    Processing record 150|krasnoselkup,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=krasnoselkup,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 151|rabo de peixe,pt
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rabo+de+peixe,pt
+    
+    Processing record 152|cam ranh,vn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cam+ranh,vn
+    
+    Processing record 153|baculin,ph
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=baculin,ph
+    
+    Processing record 154|faya,td
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=faya,td
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 155|kitgum,ug
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kitgum,ug
+    
+    Processing record 156|markivka,ua
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=markivka,ua
+    
+    Processing record 157|nurota,uz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nurota,uz
+    
+    Processing record 158|norman wells,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=norman+wells,ca
+    
+    Processing record 159|jardim,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jardim,br
+    
+    Processing record 160|pilar,ph
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pilar,ph
+    
+    Processing record 161|bud,no
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bud,no
+    
+    Processing record 162|kaa-khem,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kaa-khem,ru
+    
+    Processing record 163|le mars,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=le+mars,us
+    
+    Processing record 164|northam,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=northam,au
+    
+    Processing record 165|nyurba,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nyurba,ru
+    
+    Processing record 166|aklavik,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=aklavik,ca
+    
+    Processing record 167|palmer,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=palmer,us
+    
+    Processing record 168|salacgriva,lv
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=salacgriva,lv
+    
+    Processing record 169|plettenberg bay,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=plettenberg+bay,za
+    
+    Processing record 170|dingle,ie
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dingle,ie
+    
+    Processing record 171|san rafael,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+rafael,ar
+    
+    Processing record 172|taolanaro,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=taolanaro,mg
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 173|ugoofaaru,mv
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ugoofaaru,mv
+    
+    Processing record 174|winton,nz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=winton,nz
+    
+    Processing record 175|college place,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=college+place,us
+    
+    Processing record 176|tateyama,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tateyama,jp
+    
+    Processing record 177|paso del toro,mx
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=paso+del+toro,mx
+    
+    Processing record 178|harboore,dk
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=harboore,dk
+    
+    Processing record 179|palembang,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=palembang,id
+    
+    Processing record 180|tiksi,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tiksi,ru
+    
+    Processing record 181|moa,cu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=moa,cu
+    
+    Processing record 182|maceio,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maceio,br
+    
+    Processing record 183|great bend,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=great+bend,us
+    
+    Processing record 184|superior,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=superior,us
+    
+    Processing record 185|jieshou,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jieshou,cn
+    
+    Processing record 186|diapaga,bf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=diapaga,bf
+    
+    Processing record 187|kahului,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kahului,us
+    
+    Processing record 188|gat,ly
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gat,ly
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 189|lukiv,ua
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lukiv,ua
+    
+    Processing record 190|mahanoro,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mahanoro,mg
+    
+    Processing record 191|pitimbu,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pitimbu,br
+    
+    Processing record 192|hokitika,nz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hokitika,nz
+    
+    Processing record 193|bokovskaya,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bokovskaya,ru
+    
+    Processing record 194|vila franca do campo,pt
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vila+franca+do+campo,pt
+    
+    Processing record 195|piro,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=piro,in
+    
+    Processing record 196|olhao,pt
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=olhao,pt
+    
+    Processing record 197|maswa,tz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maswa,tz
+    
+    Processing record 198|cidreira,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cidreira,br
+    
+    Processing record 199|lukovetskiy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lukovetskiy,ru
+    
+    Processing record 200|cochabamba,bo
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cochabamba,bo
+    
+    Processing record 201|dabaca,ro
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dabaca,ro
+    
+    Processing record 202|monrovia,lr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=monrovia,lr
+    
+    Processing record 203|kavieng,pg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kavieng,pg
+    
+    Processing record 204|roura,gf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=roura,gf
+    
+    Processing record 205|susanville,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=susanville,us
+    
+    Processing record 206|olga,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=olga,ru
+    
+    Processing record 207|chumikan,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chumikan,ru
+    
+    Processing record 208|pirapemas,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pirapemas,br
+    
+    Processing record 209|itoman,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=itoman,jp
+    
+    Processing record 210|kazalinsk,kz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kazalinsk,kz
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 211|fortuna,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fortuna,us
+    
+    Processing record 212|charleston,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=charleston,us
+    
+    Processing record 213|luis correia,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=luis+correia,br
+    
+    Processing record 214|tilichiki,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tilichiki,ru
+    
+    Processing record 215|guerrero negro,mx
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=guerrero+negro,mx
+    
+    Processing record 216|abay,kz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=abay,kz
+    
+    Processing record 217|tongzi,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tongzi,cn
+    
+    Processing record 218|pacific grove,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pacific+grove,us
+    
+    Processing record 219|turukhansk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=turukhansk,ru
+    
+    Processing record 220|russell,nz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=russell,nz
+    
+    Processing record 221|yar-sale,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yar-sale,ru
+    
+    Processing record 222|ozernovskiy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ozernovskiy,ru
+    
+    Processing record 223|mosalsk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mosalsk,ru
+    
+    Processing record 224|altay,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=altay,cn
+    
+    Processing record 225|bengkulu,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bengkulu,id
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 226|chontalpa,mx
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chontalpa,mx
+    
+    Processing record 227|rochester,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rochester,us
+    
+    Processing record 228|gracias,hn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gracias,hn
+    
+    Processing record 229|tanout,ne
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tanout,ne
+    
+    Processing record 230|attawapiskat,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=attawapiskat,ca
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 231|cheremisinovo,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cheremisinovo,ru
+    
+    Processing record 232|rungata,ki
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rungata,ki
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 233|san policarpo,ph
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+policarpo,ph
+    
+    Processing record 234|necochea,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=necochea,ar
+    
+    Processing record 235|neiafu,to
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=neiafu,to
+    
+    Processing record 236|chapais,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chapais,ca
+    
+    Processing record 237|jalu,ly
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jalu,ly
+    
+    Processing record 238|tena,ec
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tena,ec
+    
+    Processing record 239|mindelo,cv
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mindelo,cv
+    
+    Processing record 240|lasa,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lasa,cn
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 241|bafoussam,cm
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bafoussam,cm
+    
+    Processing record 242|avera,pf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=avera,pf
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 243|anar darreh,af
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=anar+darreh,af
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 244|kologriv,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kologriv,ru
+    
+    Processing record 245|yellowknife,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yellowknife,ca
+    
+    Processing record 246|havre-saint-pierre,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=havre-saint-pierre,ca
+    
+    Processing record 247|ozgon,kg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ozgon,kg
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 248|broken hill,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=broken+hill,au
+    
+    Processing record 249|thompson,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=thompson,ca
+    
+    Processing record 250|borova,ua
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=borova,ua
+    
+    Processing record 251|gravdal,no
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gravdal,no
+    
+    Processing record 252|port hedland,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+hedland,au
+    
+    Processing record 253|provideniya,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=provideniya,ru
+    
+    Processing record 254|laguna,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=laguna,br
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 255|fairbanks,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fairbanks,us
+    
+    Processing record 256|dubti,et
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dubti,et
+    
+    Processing record 257|victor harbor,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=victor+harbor,au
+    
+    Processing record 258|kutum,sd
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kutum,sd
+    
+    Processing record 259|odweyne,so
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=odweyne,so
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 260|saint-augustin,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saint-augustin,ca
+    
+    Processing record 261|swan river,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=swan+river,ca
+    
+    Processing record 262|hailey,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hailey,us
+    
+    Processing record 263|tuatapere,nz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tuatapere,nz
+    
+    Processing record 264|taltal,cl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=taltal,cl
+    
+    Processing record 265|cockburn harbour,tc
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cockburn+harbour,tc
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 266|san francisco,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+francisco,ar
+    
+    Processing record 267|malwan,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=malwan,in
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 268|myitkyina,mm
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=myitkyina,mm
+    
+    Processing record 269|urdoma,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=urdoma,ru
+    
+    Processing record 270|saint-joseph,re
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saint-joseph,re
+    
+    Processing record 271|kalmunai,lk
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kalmunai,lk
+    
+    Processing record 272|veinticinco de mayo,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=veinticinco+de+mayo,ar
+    
+    Processing record 273|severo-kurilsk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=severo-kurilsk,ru
+    
+    Processing record 274|the valley,ai
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=the+valley,ai
+    
+    Processing record 275|gambela,et
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gambela,et
+    
+    Processing record 276|balkhash,kz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=balkhash,kz
+    
+    Processing record 277|merauke,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=merauke,id
+    
+    Processing record 278|kirakira,sb
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kirakira,sb
+    
+    Processing record 279|alcains,pt
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=alcains,pt
+    
+    Processing record 280|pordim,bg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pordim,bg
+    
+    Processing record 281|malino,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=malino,ru
+    
+    Processing record 282|antalaha,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=antalaha,mg
+    
+    Processing record 283|nadym,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nadym,ru
+    
+    Processing record 284|ust-kan,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ust-kan,ru
+    
+    Processing record 285|hovd,mn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hovd,mn
+    
+    Processing record 286|esperance,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=esperance,au
+    
+    Processing record 287|boende,cd
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=boende,cd
+    
+    Processing record 288|fort wellington,gy
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fort+wellington,gy
+    
+    Processing record 289|ayan,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ayan,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 290|lubana,lv
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lubana,lv
+    
+    Processing record 291|mayo,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mayo,ca
+    
+    Processing record 292|tadepalle,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tadepalle,in
+    
+    Processing record 293|la fria,ve
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=la+fria,ve
+    
+    Processing record 294|hambantota,lk
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hambantota,lk
+    
+    Processing record 295|sioux lookout,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sioux+lookout,ca
+    
+    Processing record 296|hofn,is
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hofn,is
+    
+    Processing record 297|namibe,ao
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=namibe,ao
+    
+    Processing record 298|beidao,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=beidao,cn
+    
+    Processing record 299|arcachon,fr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=arcachon,fr
+    
+    Processing record 300|saskylakh,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saskylakh,ru
+    
+    Processing record 301|danilovka,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=danilovka,ru
+    
+    Processing record 302|predivinsk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=predivinsk,ru
+    
+    Processing record 303|tornio,fi
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tornio,fi
+    
+    Processing record 304|belushya guba,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=belushya+guba,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 305|lata,sb
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lata,sb
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 306|krasnyy bogatyr,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=krasnyy+bogatyr,ru
+    
+    Processing record 307|zhaodong,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zhaodong,cn
+    
+    Processing record 308|sept-iles,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sept-iles,ca
+    
+    Processing record 309|ostrovnoy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ostrovnoy,ru
+    
+    Processing record 310|sao joao da barra,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sao+joao+da+barra,br
+    
+    Processing record 311|fuxin,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fuxin,cn
+    
+    Processing record 312|upernavik,gl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=upernavik,gl
+    
+    Processing record 313|seymchan,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=seymchan,ru
+    
+    Processing record 314|hobyo,so
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hobyo,so
+    
+    Processing record 315|rakhya,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rakhya,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 316|port macquarie,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+macquarie,au
+    
+    Processing record 317|isla vista,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=isla+vista,us
+    
+    Processing record 318|pochutla,mx
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pochutla,mx
+    
+    Processing record 319|santa rosa,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=santa+rosa,ar
+    
+    Processing record 320|dongli,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dongli,cn
+    
+    Processing record 321|ormara,pk
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ormara,pk
+    
+    Processing record 322|gayny,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gayny,ru
+    
+    Processing record 323|geraldton,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=geraldton,au
+    
+    Processing record 324|amparafaravola,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=amparafaravola,mg
+    
+    Processing record 325|umzimvubu,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=umzimvubu,za
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 326|kyshtovka,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kyshtovka,ru
+    
+    Processing record 327|nizhneyansk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nizhneyansk,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 328|fort-shevchenko,kz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fort-shevchenko,kz
+    
+    Processing record 329|mildura,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mildura,au
+    
+    Processing record 330|noumea,nc
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=noumea,nc
+    
+    Processing record 331|airai,pw
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=airai,pw
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 332|namatanai,pg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=namatanai,pg
+    
+    Processing record 333|bilma,ne
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bilma,ne
+    
+    Processing record 334|aborlan,ph
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=aborlan,ph
+    
+    Processing record 335|viransehir,tr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=viransehir,tr
+    
+    Processing record 336|zhanatas,kz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zhanatas,kz
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 337|mount barker,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mount+barker,au
+    
+    Processing record 338|champasak,la
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=champasak,la
+    
+    Processing record 339|bur gabo,so
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bur+gabo,so
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 340|shakawe,bw
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=shakawe,bw
+    
+    Processing record 341|moville,ie
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=moville,ie
+    
+    Processing record 342|oranjestad,aw
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=oranjestad,aw
+    
+    Processing record 343|bargal,so
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bargal,so
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 344|maumere,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maumere,id
+    
+    Processing record 345|hvolsvollur,is
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hvolsvollur,is
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 346|balatonlelle,hu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=balatonlelle,hu
+    
+    Processing record 347|uhlove,ua
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=uhlove,ua
+    
+    Processing record 348|talaya,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=talaya,ru
+    
+    Processing record 349|queimadas,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=queimadas,br
+    
+    Processing record 350|arivonimamo,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=arivonimamo,mg
+    
+    Processing record 351|margate,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=margate,za
+    
+    Processing record 352|saint-leu,re
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saint-leu,re
+    
+    Processing record 353|chipiona,es
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chipiona,es
+    
+    Processing record 354|contai,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=contai,in
+    
+    Processing record 355|borger,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=borger,us
+    
+    Processing record 356|birjand,ir
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=birjand,ir
+    
+    Processing record 357|twin falls,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=twin+falls,us
+    
+    Processing record 358|zyryanka,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zyryanka,ru
+    
+    Processing record 359|katobu,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=katobu,id
+    
+    Processing record 360|eenhana,na
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=eenhana,na
+    
+    Processing record 361|omboue,ga
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=omboue,ga
+    
+    Processing record 362|new norfolk,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=new+norfolk,au
+    
+    Processing record 363|khudumelapye,bw
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khudumelapye,bw
+    
+    Processing record 364|narimanov,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=narimanov,ru
+    
+    Processing record 365|umm kaddadah,sd
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=umm+kaddadah,sd
+    
+    Processing record 366|puerto quijarro,bo
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=puerto+quijarro,bo
+    
+    Processing record 367|goundam,ml
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=goundam,ml
+    
+    Processing record 368|musoma,tz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=musoma,tz
+    
+    Processing record 369|ulaanbaatar,mn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ulaanbaatar,mn
+    
+    Processing record 370|podgornoye,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=podgornoye,ru
+    
+    Processing record 371|viedma,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=viedma,ar
+    
+    Processing record 372|olinda,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=olinda,br
+    
+    Processing record 373|souillac,mu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=souillac,mu
+    
+    Processing record 374|japura,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=japura,br
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 375|naze,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=naze,jp
+    
+    Processing record 376|vestmannaeyjar,is
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vestmannaeyjar,is
+    
+    Processing record 377|zhigansk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zhigansk,ru
+    
+    Processing record 378|redding,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=redding,us
+    
+    Processing record 379|kieta,pg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kieta,pg
+    
+    Processing record 380|linxia,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=linxia,cn
+    
+    Processing record 381|santa fe,cu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=santa+fe,cu
+    
+    Processing record 382|chokurdakh,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chokurdakh,ru
+    
+    Processing record 383|palu,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=palu,id
+    
+    Processing record 384|yumen,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yumen,cn
+    
+    Processing record 385|washington,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=washington,us
+    
+    Processing record 386|bethel,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bethel,us
+    
+    Processing record 387|finote selam,et
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=finote+selam,et
+    
+    Processing record 388|hasaki,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hasaki,jp
+    
+    Processing record 389|sitka,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sitka,us
+    
+    Processing record 390|oyo,ng
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=oyo,ng
+    
+    Processing record 391|petropavlovsk-kamchatskiy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=petropavlovsk-kamchatskiy,ru
+    
+    Processing record 392|hay river,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hay+river,ca
+    
+    Processing record 393|padang,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=padang,id
+    
+    Processing record 394|barawe,so
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=barawe,so
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 395|pangnirtung,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pangnirtung,ca
+    
+    Processing record 396|road town,vg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=road+town,vg
+    
+    Processing record 397|hamilton,bm
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hamilton,bm
+    
+    Processing record 398|kushima,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kushima,jp
+    
+    Processing record 399|vangaindrano,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vangaindrano,mg
+    
+    Processing record 400|lisakovsk,kz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lisakovsk,kz
+    
+    Processing record 401|serik,tr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=serik,tr
+    
+    Processing record 402|poronaysk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=poronaysk,ru
+    
+    Processing record 403|victoria,sc
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=victoria,sc
+    
+    Processing record 404|ulladulla,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ulladulla,au
+    
+    Processing record 405|bandarbeyla,so
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bandarbeyla,so
+    
+    Processing record 406|sedro-woolley,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sedro-woolley,us
+    
+    Processing record 407|tabiauea,ki
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tabiauea,ki
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 408|rantepao,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rantepao,id
+    
+    Processing record 409|csavoly,hu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=csavoly,hu
+    
+    Processing record 410|grand river south east,mu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=grand+river+south+east,mu
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 411|gwanda,zw
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gwanda,zw
+    
+    Processing record 412|aykhal,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=aykhal,ru
+    
+    Processing record 413|igrim,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=igrim,ru
+    
+    Processing record 414|takoradi,gh
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=takoradi,gh
+    
+    Processing record 415|banepa,np
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=banepa,np
+    
+    Processing record 416|ushuaia,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ushuaia,ar
+    
+    Processing record 417|muli,mv
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=muli,mv
+    
+    Processing record 418|pinega,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pinega,ru
+    
+    Processing record 419|huilong,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=huilong,cn
+    
+    Processing record 420|vao,nc
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vao,nc
+    
+    Processing record 421|cururupu,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cururupu,br
+    
+    Processing record 422|curup,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=curup,id
+    
+    Processing record 423|maraa,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maraa,br
+    
+    Processing record 424|muros,es
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=muros,es
+    
+    Processing record 425|manama,bh
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=manama,bh
+    
+    Processing record 426|taos,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=taos,us
+    
+    Processing record 427|ambodifototra,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ambodifototra,mg
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 428|kavaratti,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kavaratti,in
+    
+    Processing record 429|coihaique,cl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=coihaique,cl
+    
+    Processing record 430|beneditinos,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=beneditinos,br
+    
+    Processing record 431|sistranda,no
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sistranda,no
+    
+    Processing record 432|tartagal,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tartagal,ar
+    
+    Processing record 433|namikupa,tz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=namikupa,tz
+    
+    Processing record 434|sunndalsora,no
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sunndalsora,no
+    
+    Processing record 435|luderitz,na
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=luderitz,na
+    
+    Processing record 436|kismayo,so
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kismayo,so
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 437|bathsheba,bb
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bathsheba,bb
+    
+    Processing record 438|onega,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=onega,ru
+    
+    Processing record 439|tsuruga,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tsuruga,jp
+    
+    Processing record 440|bodden town,ky
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bodden+town,ky
+    
+    Processing record 441|saint george,bm
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saint+george,bm
+    
+    Processing record 442|balimo,pg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=balimo,pg
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 443|vanimo,pg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vanimo,pg
+    
+    Processing record 444|tsumeb,na
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tsumeb,na
+    
+    Processing record 445|korla,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=korla,cn
+    
+    Processing record 446|deputatskiy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=deputatskiy,ru
+    
+    Processing record 447|nam tha,la
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nam+tha,la
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 448|solnechnyy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=solnechnyy,ru
+    
+    Processing record 449|lucea,jm
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lucea,jm
+    
+    Processing record 450|bartica,gy
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bartica,gy
+    
+    Processing record 451|samfya,zm
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=samfya,zm
+    
+    Processing record 452|lethem,gy
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lethem,gy
+    
+    Processing record 453|kenai,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kenai,us
+    
+    Processing record 454|nakamura,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nakamura,jp
+    
+    Processing record 455|amderma,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=amderma,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 456|ndjole,ga
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ndjole,ga
+    
+    Processing record 457|presidente olegario,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=presidente+olegario,br
+    
+    Processing record 458|agaro,et
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=agaro,et
+    
+    Processing record 459|mazyr,by
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mazyr,by
+    
+    Processing record 460|zlatoustovsk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zlatoustovsk,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 461|eurajoki,fi
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=eurajoki,fi
+    
+    Processing record 462|klyuchi,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=klyuchi,ru
+    
+    Processing record 463|kolobrzeg,pl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kolobrzeg,pl
+    
+    Processing record 464|okato,nz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=okato,nz
+    
+    Processing record 465|chuy,uy
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chuy,uy
+    
+    Processing record 466|kimberley,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kimberley,za
+    
+    Processing record 467|mahajanga,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mahajanga,mg
+    
+    Processing record 468|bundaberg,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bundaberg,au
+    
+    Processing record 469|lyuban,by
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lyuban,by
+    
+    Processing record 470|gulu,ug
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gulu,ug
+    
+    Processing record 471|ndioum,sn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ndioum,sn
+    
+    Processing record 472|tando ghulam ali,pk
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tando+ghulam+ali,pk
+    
+    Processing record 473|puerto ayora,ec
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=puerto+ayora,ec
+    
+    Processing record 474|maniitsoq,gl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maniitsoq,gl
+    
+    Processing record 475|dharchula,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dharchula,in
+    
+    Processing record 476|sao bernardo,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sao+bernardo,br
+    
+    Processing record 477|sikar,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sikar,in
+    
+    Processing record 478|auki,sb
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=auki,sb
+    
+    Processing record 479|banda aceh,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=banda+aceh,id
+    
+    Processing record 480|karkaralinsk,kz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=karkaralinsk,kz
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 481|shimoda,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=shimoda,jp
+    
+    Processing record 482|talnakh,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=talnakh,ru
+    
+    Processing record 483|sechura,pe
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sechura,pe
+    
+    Processing record 484|mys shmidta,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mys+shmidta,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 485|trelew,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=trelew,ar
+    
+    Processing record 486|sigmaringen,de
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sigmaringen,de
+    
+    Processing record 487|winneba,gh
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=winneba,gh
+    
+    Processing record 488|saint anthony,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saint+anthony,ca
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 489|yozgat,tr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yozgat,tr
+    
+    Processing record 490|corrente,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=corrente,br
+    
+    Processing record 491|honningsvag,no
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=honningsvag,no
+    
+    Processing record 492|monster,nl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=monster,nl
+    
+    Processing record 493|singaraja,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=singaraja,id
+    
+    Processing record 494|sredec,bg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sredec,bg
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 495|shahr-e babak,ir
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=shahr-e+babak,ir
+    
+    Processing record 496|ahipara,nz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ahipara,nz
+    
+    Processing record 497|tawnat,ma
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tawnat,ma
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 498|peniche,pt
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=peniche,pt
+    
+    Processing record 499|hosangadi,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hosangadi,in
+    
+    Processing record 500|tongliao,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tongliao,cn
+    
+    Processing record 501|barentsburg,sj
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=barentsburg,sj
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 502|nipawin,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nipawin,ca
+    
+    Processing record 503|sumbawa,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sumbawa,id
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 504|khambhaliya,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khambhaliya,in
+    
+    Processing record 505|malanje,ao
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=malanje,ao
+    
+    Processing record 506|albany,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=albany,au
+    
+    Processing record 507|bafia,cm
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bafia,cm
+    
+    Processing record 508|ilulissat,gl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ilulissat,gl
+    
+    Processing record 509|mikumi,tz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mikumi,tz
+    
+    Processing record 510|chunoyar,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chunoyar,ru
+    
+    Processing record 511|fagersta,se
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fagersta,se
+    
+    Processing record 512|pavda,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pavda,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 513|khuzdar,pk
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khuzdar,pk
+    
+    Processing record 514|azimur,ma
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=azimur,ma
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 515|lorengau,pg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lorengau,pg
+    
+    Processing record 516|olafsvik,is
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=olafsvik,is
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 517|salisbury,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=salisbury,us
+    
+    Processing record 518|marienburg,sr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=marienburg,sr
+    
+    Processing record 519|sinnamary,gf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sinnamary,gf
+    
+    Processing record 520|nagua,do
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nagua,do
+    
+    Processing record 521|bolshaya orlovka,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bolshaya+orlovka,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 522|kiruna,se
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kiruna,se
+    
+    Processing record 523|kashmor,pk
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kashmor,pk
+    
+    Processing record 524|tumannyy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tumannyy,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 525|westport,nz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=westport,nz
+    
+    Processing record 526|xai-xai,mz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=xai-xai,mz
+    
+    Processing record 527|santa vitoria do palmar,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=santa+vitoria+do+palmar,br
+    
+    Processing record 528|mandera,ke
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mandera,ke
+    
+    Processing record 529|lakes entrance,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lakes+entrance,au
+    
+    Processing record 530|elizabeth city,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=elizabeth+city,us
+    
+    Processing record 531|hithadhoo,mv
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hithadhoo,mv
+    
+    Processing record 532|corn island,ni
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=corn+island,ni
+    
+    Processing record 533|port keats,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+keats,au
+    
+    Processing record 534|atar,mr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=atar,mr
+    
+    Processing record 535|huarmey,pe
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=huarmey,pe
+    
+    Processing record 536|mount vernon,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mount+vernon,us
+    
+    Processing record 537|cabedelo,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cabedelo,br
+    
+    Processing record 538|khani,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khani,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 539|vaitupu,wf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vaitupu,wf
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 540|ondorhaan,mn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ondorhaan,mn
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 541|rawson,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rawson,ar
+    
+    Processing record 542|omsukchan,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=omsukchan,ru
+    
+    Processing record 543|otjimbingwe,na
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=otjimbingwe,na
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 544|breves,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=breves,br
+    
+    Processing record 545|arman,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=arman,ru
+    
+    Processing record 546|mokhsogollokh,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mokhsogollokh,ru
+    
+    Processing record 547|nuuk,gl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nuuk,gl
+    
+    Processing record 548|suez,eg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=suez,eg
+    
+    Processing record 549|novikovo,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=novikovo,ru
+    
+    Processing record 550|meyungs,pw
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=meyungs,pw
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 551|praia,cv
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=praia,cv
+    
+    Processing record 552|terrace bay,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=terrace+bay,ca
+    
+    Processing record 553|port shepstone,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+shepstone,za
+    
+    Processing record 554|witu,ke
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=witu,ke
+    
+    Processing record 555|kondinskoye,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kondinskoye,ru
+    
+    Processing record 556|bansgaon,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bansgaon,in
+    
+    Processing record 557|sabha,ly
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sabha,ly
+    
+    Processing record 558|xiamen,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=xiamen,cn
+    
+    Processing record 559|aksu,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=aksu,cn
+    
+    Processing record 560|angoram,pg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=angoram,pg
+    
+    Processing record 561|torbay,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=torbay,ca
+    
+    Processing record 562|lolua,tv
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lolua,tv
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 563|touros,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=touros,br
+    
+    Processing record 564|mackay,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mackay,au
+    
+    Processing record 565|ust-omchug,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ust-omchug,ru
+    
+    Processing record 566|emmett,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=emmett,us
+    
+    Processing record 567|koryazhma,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=koryazhma,ru
+    
+    Processing record 568|leningradskiy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=leningradskiy,ru
+    
+    Processing record 569|tezu,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tezu,in
+    
+    Processing record 570|guanica,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=guanica,us
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 571|misratah,ly
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=misratah,ly
+    
+    Processing record 572|mafinga,tz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mafinga,tz
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 573|lahaina,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lahaina,us
+    
+    Processing record 574|atlantic city,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=atlantic+city,us
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 575|stara synyava,ua
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=stara+synyava,ua
+    
+    Processing record 576|portobelo,pa
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=portobelo,pa
+    
+    Processing record 577|fairview,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=fairview,ca
+    
+    Processing record 578|mataura,pf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mataura,pf
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 579|abha,sa
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=abha,sa
+    
+    Processing record 580|acapulco,mx
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=acapulco,mx
+    
+    Processing record 581|bolzano,it
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bolzano,it
+    
+    Processing record 582|port-cartier,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port-cartier,ca
+    
+    Processing record 583|baracoa,cu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=baracoa,cu
+    
+    Processing record 584|illoqqortoormiut,gl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=illoqqortoormiut,gl
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 585|san jeronimo,mx
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+jeronimo,mx
+    
+    Processing record 586|praia da vitoria,pt
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=praia+da+vitoria,pt
+    
+    Processing record 587|nikolskoye,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nikolskoye,ru
+    
+    Processing record 588|vitim,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vitim,ru
+    
+    Processing record 589|bowen,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bowen,au
+    
+    Processing record 590|cherdyn,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cherdyn,ru
+    
+    Processing record 591|altamira,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=altamira,br
+    
+    Processing record 592|notse,tg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=notse,tg
+    
+    Processing record 593|san cristobal,ec
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+cristobal,ec
+    
+    Processing record 594|barranca,pe
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=barranca,pe
+    
+    Processing record 595|zhezkazgan,kz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zhezkazgan,kz
+    
+    Processing record 596|anadyr,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=anadyr,ru
+    
+    Processing record 597|pula,hr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pula,hr
+    
+    Processing record 598|lincoln,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lincoln,us
+    
+    Processing record 599|turinsk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=turinsk,ru
+    
+    Processing record 600|najran,sa
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=najran,sa
+    
+    Processing record 601|ndele,cf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ndele,cf
+    
+    Processing record 602|newcastleton,gb
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=newcastleton,gb
+    
+    Processing record 603|beloha,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=beloha,mg
+    
+    Processing record 604|chato,tz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chato,tz
+    
+    Processing record 605|tocopilla,cl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tocopilla,cl
+    
+    Processing record 606|maralal,ke
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maralal,ke
+    
+    Processing record 607|hualmay,pe
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hualmay,pe
+    
+    Processing record 608|livramento,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=livramento,br
+    
+    Processing record 609|mandiana,gn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mandiana,gn
+    
+    Processing record 610|golovchino,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=golovchino,ru
+    
+    Processing record 611|ucluelet,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ucluelet,ca
+    
+    Processing record 612|morwell,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=morwell,au
+    
+    Processing record 613|patharia,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=patharia,in
+    
+    Processing record 614|svarstad,no
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=svarstad,no
+    
+    Processing record 615|alofi,nu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=alofi,nu
+    
+    Processing record 616|benguela,ao
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=benguela,ao
+    
+    Processing record 617|muhos,fi
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=muhos,fi
+    
+    Processing record 618|grindavik,is
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=grindavik,is
+    
+    Processing record 619|jiazi,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jiazi,cn
+    
+    Processing record 620|tasiilaq,gl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tasiilaq,gl
+    
+    Processing record 621|jackson,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jackson,us
+    
+    Processing record 622|ratnagiri,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ratnagiri,in
+    
+    Processing record 623|morondava,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=morondava,mg
+    
+    Processing record 624|buala,sb
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=buala,sb
+    
+    Processing record 625|valdivia,cl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=valdivia,cl
+    
+    Processing record 626|balaipungut,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=balaipungut,id
+    
+    Processing record 627|marquette,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=marquette,us
+    
+    Processing record 628|kuytun,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kuytun,cn
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 629|alyangula,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=alyangula,au
+    
+    Processing record 630|khatanga,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khatanga,ru
+    
+    Processing record 631|punta arenas,cl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=punta+arenas,cl
+    
+    Processing record 632|half moon bay,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=half+moon+bay,us
+    
+    Processing record 633|verkhnevilyuysk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=verkhnevilyuysk,ru
+    
+    Processing record 634|georgetown,sh
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=georgetown,sh
+    
+    Processing record 635|biryusinsk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=biryusinsk,ru
+    
+    Processing record 636|lubin,pl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lubin,pl
+    
+    Processing record 637|camden,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=camden,us
+    
+    Processing record 638|leh,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=leh,in
+    
+    Processing record 639|maragogi,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maragogi,br
+    
+    Processing record 640|zavodouspenskoye,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zavodouspenskoye,ru
+    
+    Processing record 641|san patricio,mx
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+patricio,mx
+    
+    Processing record 642|rikitea,pf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rikitea,pf
+    
+    Processing record 643|tres lagoas,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tres+lagoas,br
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 644|la romana,do
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=la+romana,do
+    
+    Processing record 645|branca,pt
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=branca,pt
+    
+    Processing record 646|didao,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=didao,cn
+    
+    Processing record 647|parana,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=parana,ar
+    
+    Processing record 648|jacareacanga,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=jacareacanga,br
+    
+    Processing record 649|tura,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tura,ru
+    
+    Processing record 650|ahuimanu,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ahuimanu,us
+    
+    Processing record 651|marcona,pe
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=marcona,pe
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 652|birao,cf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=birao,cf
+    
+    Processing record 653|broome,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=broome,au
+    
+    Processing record 654|lluta,pe
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lluta,pe
+    
+    Processing record 655|sur,om
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sur,om
+    
+    Processing record 656|codrington,ag
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=codrington,ag
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 657|tsihombe,mg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tsihombe,mg
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 658|mount isa,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mount+isa,au
+    
+    Processing record 659|manta,ec
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=manta,ec
+    
+    Processing record 660|nevel,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nevel,ru
+    
+    Processing record 661|kodiak,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kodiak,us
+    
+    Processing record 662|ust-nera,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ust-nera,ru
+    
+    Processing record 663|goma,cd
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=goma,cd
+    
+    Processing record 664|kargopol,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kargopol,ru
+    
+    Processing record 665|berga,es
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=berga,es
+    
+    Processing record 666|borovoy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=borovoy,ru
+    
+    Processing record 667|vanino,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vanino,ru
+    
+    Processing record 668|kjopsvik,no
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kjopsvik,no
+    
+    Processing record 669|sola,vu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sola,vu
+    
+    Processing record 670|brookhaven,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=brookhaven,us
+    
+    Processing record 671|santa isabel do rio negro,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=santa+isabel+do+rio+negro,br
+    
+    Processing record 672|sumenep,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sumenep,id
+    
+    Processing record 673|beruwala,lk
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=beruwala,lk
+    
+    Processing record 674|yerbogachen,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yerbogachen,ru
+    
+    Processing record 675|ribeira grande,pt
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ribeira+grande,pt
+    
+    Processing record 676|raudeberg,no
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=raudeberg,no
+    
+    Processing record 677|saint-philippe,re
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saint-philippe,re
+    
+    Processing record 678|bratsk,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bratsk,ru
+    
+    Processing record 679|portland,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=portland,au
+    
+    Processing record 680|san carlos de bariloche,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=san+carlos+de+bariloche,ar
+    
+    Processing record 681|independencia,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=independencia,br
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 682|kualakapuas,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kualakapuas,id
+    
+    Processing record 683|kapaa,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kapaa,us
+    
+    Processing record 684|morro bay,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=morro+bay,us
+    
+    Processing record 685|karratha,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=karratha,au
+    
+    Processing record 686|pangai,to
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pangai,to
+    
+    Processing record 687|bredasdorp,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bredasdorp,za
+    
+    Processing record 688|yinchuan,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yinchuan,cn
+    
+    Processing record 689|mehamn,no
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mehamn,no
+    
+    Processing record 690|asahikawa,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=asahikawa,jp
+    
+    Processing record 691|vostok,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vostok,ru
+    
+    Processing record 692|nuevo progreso,mx
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nuevo+progreso,mx
+    
+    Processing record 693|cherskiy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cherskiy,ru
+    
+    Processing record 694|clyde river,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=clyde+river,ca
+    
+    Processing record 695|tuktoyaktuk,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tuktoyaktuk,ca
+    
+    Processing record 696|rawah,iq
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rawah,iq
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 697|iracemapolis,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=iracemapolis,br
+    
+    Processing record 698|masuda,jp
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=masuda,jp
+    
+    Processing record 699|ola,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ola,ru
+    
+    Processing record 700|bonavista,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bonavista,ca
+    
+    Processing record 701|ketchikan,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ketchikan,us
+    
+    Processing record 702|kembe,cf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kembe,cf
+    
+    Processing record 703|waterford,ie
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=waterford,ie
+    
+    Processing record 704|dong xoai,vn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dong+xoai,vn
+    
+    Processing record 705|tchibanga,ga
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tchibanga,ga
+    
+    Processing record 706|qaqortoq,gl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=qaqortoq,gl
+    
+    Processing record 707|talara,pe
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=talara,pe
+    
+    Processing record 708|port lincoln,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+lincoln,au
+    
+    Processing record 709|shache,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=shache,cn
+    
+    Processing record 710|ponta do sol,cv
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=ponta+do+sol,cv
+    
+    Processing record 711|asilah,ma
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=asilah,ma
+    
+    Processing record 712|manono,cd
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=manono,cd
+    
+    Processing record 713|hami,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hami,cn
+    
+    Processing record 714|wilmington,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=wilmington,us
+    
+    Processing record 715|liverpool,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=liverpool,ca
+    
+    Processing record 716|lagoa,pt
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lagoa,pt
+    
+    Processing record 717|nhulunbuy,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nhulunbuy,au
+    
+    Processing record 718|batagay,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=batagay,ru
+    
+    Processing record 719|maloshuyka,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=maloshuyka,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 720|coquimbo,cl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=coquimbo,cl
+    
+    Processing record 721|castro,cl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=castro,cl
+    
+    Processing record 722|denpasar,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=denpasar,id
+    
+    Processing record 723|komatipoort,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=komatipoort,za
+    
+    Processing record 724|coroieni,ro
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=coroieni,ro
+    
+    Processing record 725|satitoa,ws
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=satitoa,ws
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 726|chany,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=chany,ru
+    
+    Processing record 727|sinkat,sd
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sinkat,sd
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 728|aguimes,es
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=aguimes,es
+    
+    Processing record 729|kungurtug,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kungurtug,ru
+    
+    Processing record 730|poum,nc
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=poum,nc
+    
+    Processing record 731|nouadhibou,mr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nouadhibou,mr
+    
+    Processing record 732|tual,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tual,id
+    
+    Processing record 733|tukrah,ly
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tukrah,ly
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 734|yunyang,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yunyang,cn
+    
+    Processing record 735|kabinda,cd
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kabinda,cd
+    
+    Processing record 736|soyo,ao
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=soyo,ao
+    
+    Processing record 737|saldanha,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=saldanha,za
+    
+    Processing record 738|cayenne,gf
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cayenne,gf
+    
+    Processing record 739|lompoc,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lompoc,us
+    
+    Processing record 740|zhelyabovka,ua
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zhelyabovka,ua
+    
+    Processing record 741|tutrakan,bg
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tutrakan,bg
+    
+    Processing record 742|cape town,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cape+town,za
+    
+    Processing record 743|bolungarvik,is
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bolungarvik,is
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 744|karaul,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=karaul,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 745|pervomayskoye,ua
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pervomayskoye,ua
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 746|temaraia,ki
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=temaraia,ki
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 747|kadykchan,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kadykchan,ru
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 748|peleduy,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=peleduy,ru
+    
+    Processing record 749|mrirt,ma
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mrirt,ma
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 750|nioro,ml
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=nioro,ml
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 751|yialos,gr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yialos,gr
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 752|tazmalt,dz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tazmalt,dz
+    
+    Processing record 753|grand gaube,mu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=grand+gaube,mu
+    
+    Processing record 754|khandagayty,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khandagayty,ru
+    
+    Processing record 755|busselton,au
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=busselton,au
+    
+    Processing record 756|vinh,vn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=vinh,vn
+    
+    Processing record 757|venado tuerto,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=venado+tuerto,ar
+    
+    Processing record 758|lagos,pt
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=lagos,pt
+    
+    Processing record 759|phibun mangsahan,th
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=phibun+mangsahan,th
+    
+    Processing record 760|rodrigues alves,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rodrigues+alves,br
+    
+    Processing record 761|tidore,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tidore,id
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 762|mitsamiouli,km
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=mitsamiouli,km
+    
+    Processing record 763|sri aman,my
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sri+aman,my
+    
+    Processing record 764|opunake,nz
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=opunake,nz
+    
+    Processing record 765|avarua,ck
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=avarua,ck
+    
+    Processing record 766|higuey,do
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=higuey,do
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 767|gdansk,pl
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gdansk,pl
+    
+    Processing record 768|pingzhuang,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pingzhuang,cn
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 769|linhares,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=linhares,br
+    
+    Processing record 770|iqaluit,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=iqaluit,ca
+    
+    Processing record 771|kudahuvadhoo,mv
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kudahuvadhoo,mv
+    
+    Processing record 772|cordoba,ar
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cordoba,ar
+    
+    Processing record 773|dongsheng,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=dongsheng,cn
+    
+    Processing record 774|port blair,in
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=port+blair,in
+    
+    Processing record 775|samusu,ws
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=samusu,ws
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 776|palabuhanratu,id
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=palabuhanratu,id
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 777|tokat,tr
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tokat,tr
+    
+    Processing record 778|zhangye,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zhangye,cn
+    
+    Processing record 779|eskasem,af
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=eskasem,af
+    
+    [1;31mCity not found. Skipping...[1;30m
+    
+    Processing record 780|hattiesburg,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=hattiesburg,us
+    
+    Processing record 781|araouane,ml
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=araouane,ml
+    
+    Processing record 782|rocha,uy
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=rocha,uy
+    
+    Processing record 783|grafton,us
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=grafton,us
+    
+    Processing record 784|cabo san lucas,mx
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=cabo+san+lucas,mx
+    
+    Processing record 785|los llanos de aridane,es
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=los+llanos+de+aridane,es
+    
+    Processing record 786|zenzeli,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=zenzeli,ru
+    
+    Processing record 787|richards bay,za
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=richards+bay,za
+    
+    Processing record 788|solano,co
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=solano,co
+    
+    Processing record 789|tromso,no
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=tromso,no
+    
+    Processing record 790|yurginskoye,ru
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=yurginskoye,ru
+    
+    Processing record 791|kapit,my
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=kapit,my
+    
+    Processing record 792|khandbari,np
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=khandbari,np
+    
+    Processing record 793|gashua,ng
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=gashua,ng
+    
+    Processing record 794|halifax,ca
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=halifax,ca
+    
+    Processing record 795|sao domingos,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=sao+domingos,br
+    
+    Processing record 796|bambous virieux,mu
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=bambous+virieux,mu
+    
+    Processing record 797|pingliang,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=pingliang,cn
+    
+    Processing record 798|erenhot,cn
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=erenhot,cn
+    
+    Processing record 799|itarema,br
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=itarema,br
+    
+    Processing record 800|laem sing,th
+    
+    https://api.openweathermap.org/data/2.5/weather?appid=4af76c79df8d11f6295bc8323877e2e5&units=imperial&q=laem+sing,th
     
     -----------------------------
     Data Retrieval Complete
@@ -3230,63 +3613,63 @@ weather_data.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>Wageningen</td>
-      <td>SR</td>
-      <td>1513783853</td>
-      <td>5.77</td>
-      <td>-56.68</td>
-      <td>81.39</td>
-      <td>95</td>
-      <td>14.23</td>
-      <td>20</td>
+      <td>Zeya</td>
+      <td>RU</td>
+      <td>1513961988</td>
+      <td>53.74</td>
+      <td>127.27</td>
+      <td>-15.55</td>
+      <td>56</td>
+      <td>2.98</td>
+      <td>68</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Westport</td>
-      <td>NZ</td>
-      <td>1513783853</td>
-      <td>-41.75</td>
-      <td>171.60</td>
-      <td>48.04</td>
-      <td>100</td>
-      <td>1.48</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Puerto Escondido</td>
-      <td>CO</td>
-      <td>1513782000</td>
-      <td>9.02</td>
-      <td>-76.26</td>
-      <td>84.20</td>
-      <td>70</td>
-      <td>4.94</td>
+      <td>Vardo</td>
+      <td>NO</td>
+      <td>1513957800</td>
+      <td>70.37</td>
+      <td>31.11</td>
+      <td>30.20</td>
+      <td>79</td>
+      <td>13.87</td>
       <td>40</td>
     </tr>
     <tr>
+      <th>2</th>
+      <td>Luangwa</td>
+      <td>ZM</td>
+      <td>1513961988</td>
+      <td>-12.88</td>
+      <td>28.25</td>
+      <td>71.98</td>
+      <td>77</td>
+      <td>4.21</td>
+      <td>0</td>
+    </tr>
+    <tr>
       <th>3</th>
-      <td>Chalmette</td>
-      <td>US</td>
-      <td>1513783080</td>
-      <td>29.94</td>
-      <td>-89.96</td>
-      <td>73.40</td>
-      <td>94</td>
-      <td>19.46</td>
-      <td>90</td>
+      <td>Nevyansk</td>
+      <td>RU</td>
+      <td>1513961988</td>
+      <td>57.49</td>
+      <td>60.21</td>
+      <td>18.43</td>
+      <td>92</td>
+      <td>5.61</td>
+      <td>48</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Imbituba</td>
-      <td>BR</td>
-      <td>1513782000</td>
-      <td>-28.24</td>
-      <td>-48.67</td>
-      <td>78.80</td>
-      <td>83</td>
-      <td>4.70</td>
-      <td>75</td>
+      <td>Thai Binh</td>
+      <td>VN</td>
+      <td>1513961989</td>
+      <td>20.45</td>
+      <td>106.33</td>
+      <td>58.21</td>
+      <td>96</td>
+      <td>4.50</td>
+      <td>92</td>
     </tr>
   </tbody>
 </table>
@@ -3296,7 +3679,7 @@ weather_data.head()
 
 
 ```python
-#Save the result to a csv file
+# Save the result to a csv file
 weather_data.to_csv("Output/Weather_Data.csv")
 # Count of the data in the dataframe
 weather_data.count()
@@ -3305,15 +3688,15 @@ weather_data.count()
 
 
 
-    City           593
-    Country        593
-    Date           593
-    Latitude       593
-    Longitude      593
-    Temperature    593
-    Humidity       593
-    Wind speed     593
-    Cloudliness    593
+    City           701
+    Country        701
+    Date           701
+    Latitude       701
+    Longitude      701
+    Temperature    701
+    Humidity       701
+    Wind speed     701
+    Cloudliness    701
     dtype: int64
 
 
@@ -3322,19 +3705,26 @@ weather_data.count()
 
 
 ```python
+# Creating a function to set the properties of the graph
+def plotprops(xlabelname,ylabelname,xlimits):
+    plt.xlabel(xlabelname)
+    plt.ylabel(ylabelname)
+    plt.xlim(xlimits)
+    plt.title("%s vs %s (%s/%s/%s)"%(xlabelname,ylabelname,now.month,now.day,now.year),fontsize=14)
+    plt.grid(True)
+```
+
+
+```python
 # Latitude vs Max. Temperature(F)
 plt.scatter(x=weather_data["Latitude"],y=weather_data["Temperature"],facecolors="navy",edgecolors="black")
-plt.xlabel("Latitude")
-plt.ylabel("Max. Temperature(°F)")
-plt.xlim(-90,90)
-plt.title("City Latitude vs Max.Temperature(°F) (%s/%s/%s)"%(now.month,now.day,now.year),fontsize=14)
-plt.grid(True)
+plotprops("Latitude","Max. Temperature(°F)",[-90,90])
 plt.savefig("Output/City Latitude vs Temperature.jpeg")
 plt.show()
 ```
 
 
-![png](output_12_0.png)
+![png](output_13_0.png)
 
 
 ## Latitude vs Humidity Plot
@@ -3344,17 +3734,13 @@ plt.show()
 # Latitude vs Humidity
 
 plt.scatter(x=weather_data["Latitude"],y=weather_data["Humidity"],facecolors="navy",edgecolors="black")
-plt.xlabel("Latitude")
-plt.ylabel("Humidity(%)")
-plt.xlim(-90,90)
-plt.title("City Latitude vs Humidity (%s/%s/%s)"%(now.month,now.day,now.year),fontsize=14)
-plt.grid(True)
+plotprops("Latitude","Humidity(%)",[-90,90])
 plt.savefig("Output/City Latitude vs Humidity.jpeg")
 plt.show()
 ```
 
 
-![png](output_14_0.png)
+![png](output_15_0.png)
 
 
 ## Latitude vs Cloudliness
@@ -3364,17 +3750,13 @@ plt.show()
 # Latitude vs Cloudliness  
 
 plt.scatter(x=weather_data["Latitude"],y=weather_data["Cloudliness"],facecolors="navy",edgecolors="black")
-plt.xlabel("Latitude")
-plt.ylabel("Cloudiness(%)")
-plt.xlim(-90,90)
-plt.title("City Latitude vs Cloudiness (%s/%s/%s)"%(now.month,now.day,now.year),fontsize=14)
-plt.grid(True)
+plotprops("Latitude","Cloudiness(%)",[-90,90])
 plt.savefig("Output/City Latitude vs Cloudiness.jpeg")
 plt.show()
 ```
 
 
-![png](output_16_0.png)
+![png](output_17_0.png)
 
 
 ## Latitude vs Wind Speed  
@@ -3384,15 +3766,11 @@ plt.show()
 # Latitude vs Wind Speed  
 
 plt.scatter(x=weather_data["Latitude"],y=weather_data["Wind speed"],facecolors="navy",edgecolors="black")
-plt.xlabel("Latitude")
-plt.ylabel("Wind speed(mph)")
-plt.xlim(-90,90)
-plt.title("City Latitude vs Wind speed (%s/%s/%s)"%(now.month,now.day,now.year),fontsize=14)
-plt.grid(True)
+plotprops("Latitude","Wind speed(mph)",[-90,90])
 plt.savefig("Output/City Latitude vs Wind speed.jpeg")
 plt.show()
 ```
 
 
-![png](output_18_0.png)
+![png](output_19_0.png)
 
